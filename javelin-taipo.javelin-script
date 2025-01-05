@@ -1,5 +1,6 @@
 //https://inkeys.wiki/en/keymaps/taipo
 const ONESHOT_TIMEOUT = 100;
+const TAIPO_TIMEOUT = 50; // after this timeout, the keys are considered sent. Set to -1 to change this to on release
 
 // Usage pressTaipoX(0) //0 = left, 1 = right
 
@@ -130,9 +131,47 @@ func taipoLayerRelease(side) {
     taipoKeysCurrentlyPressed = taipoKeysCurrentlyPressedR;
   }
 
-  taipoLayerOneshotUpdate(side);
-  // Only trigger when no keys pressed
-  if (taipoKeysCurrentlyPressed != 0) {return;}
+  taipoOneshotUpdate(side);
+  if (TAIPO_TIMEOUT == -1) {
+    // Only trigger key update when no keys pressed(key release)
+    if (taipoKeysCurrentlyPressed != 0) {return;}
+    taipoKeysUpdate(side);
+  }
+}
+
+func taipoLayerPress(side) {
+  if (side == 0) {
+    stopTimer(49173);
+    startTimer(49173 /* random number */, ONESHOT_TIMEOUT, 0 /* is repeating */, @ { taipoOneshotUpdate(0); });
+  } else { // side = 1
+    stopTimer(64673);
+    startTimer(64673 /* random number */, ONESHOT_TIMEOUT, 0 /* is repeating */, @ { taipoOneshotUpdate(1); });
+  }
+
+  if (TAIPO_TIMEOUT != -1) {
+    // trigger after timeout
+    if (side == 0) {
+      stopTimer(07532);
+      startTimer(07532 /* random number */, TAIPO_TIMEOUT, 0 /* is repeating */, @ { taipoKeysUpdate(0); });
+    } else { // side = 1
+      stopTimer(24584);
+      startTimer(24584 /* random number */, TAIPO_TIMEOUT, 0 /* is repeating */, @ { taipoKeysUpdate(1); });
+    }
+  }
+}
+
+// Presses keys on trigger
+func taipoKeysUpdate(side) {
+  var taipoKeysPressed;
+  var taipoKeysCurrentlyPressed;
+
+  if (side == 0) {
+    taipoKeysPressed = taipoKeysPressedL;
+    taipoKeysCurrentlyPressed = taipoKeysCurrentlyPressedL;
+  } else {
+    taipoKeysPressed = taipoKeysPressedR;
+    taipoKeysCurrentlyPressed = taipoKeysCurrentlyPressedR;
+  }
 
   printValue("taipoKeysCurrentlyPressed", taipoKeysCurrentlyPressed);
 
@@ -146,16 +185,6 @@ func taipoLayerRelease(side) {
     taipoKeysPressedL = 0;
   } else {
     taipoKeysPressedR = 0;
-  }
-}
-
-func taipoLayerPress(side) {
-  if (side == 0) {
-    stopTimer(49173);
-    startTimer(49173 /* random number */, ONESHOT_TIMEOUT, 0 /* is repeating */, @ { taipoLayerOneshotUpdate(0); });
-  } else { // side = 1
-    stopTimer(64673);
-    startTimer(64673 /* random number */, ONESHOT_TIMEOUT, 0 /* is repeating */, @ { taipoLayerOneshotUpdate(1); });
   }
 }
 
@@ -176,7 +205,7 @@ func taipoCheckOneshot(side, bitmap, excludeBitmap) var{
 }
 
 // Update oneshot keys EX modifiers, arrow keys, etc
-func taipoLayerOneshotUpdate(side) {
+func taipoOneshotUpdate(side) {
   var taipoKeysPressed;
   var taipoKeysCurrentlyPressed;
   if (side == 0) {
