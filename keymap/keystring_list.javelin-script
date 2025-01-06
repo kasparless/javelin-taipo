@@ -1,0 +1,27 @@
+0
+if (taipoKeysPressed == getTaipoBitmap("R")) sendText("r");
+if (taipoKeysPressed == getTaipoBitmap("S")) sendText("s");
+if (taipoKeysPressed == getTaipoBitmap("N")) sendText("n");
+if (taipoKeysPressed == getTaipoBitmap("I")) sendText("i");
+if (taipoKeysPressed == getTaipoBitmap("A")) sendText("a");
+if (taipoKeysPressed == getTaipoBitmap("O")) sendText("o");
+if (taipoKeysPressed == getTaipoBitmap("T")) sendText("t");
+if (taipoKeysPressed == getTaipoBitmap("E")) sendText("e");
+if (taipoKeysPressed == getTaipoBitmap("OE")) sendText("c");
+if (taipoKeysPressed == getTaipoBitmap("OT")) sendText("u");
+if (taipoKeysPressed == getTaipoBitmap("AT")) sendText("q");
+if (taipoKeysPressed == getTaipoBitmap("AO")) sendText("l");
+if (taipoKeysPressed == getTaipoBitmap("NI")) sendText("y");
+if (taipoKeysPressed == getTaipoBitmap("SI")) sendText("f");
+if (taipoKeysPressed == getTaipoBitmap("SN")) sendText("p");
+if (taipoKeysPressed == getTaipoBitmap("RN")) sendText("z");
+if (taipoKeysPressed == getTaipoBitmap("RS")) sendText("b");
+if (taipoKeysPressed == getTaipoBitmap("TE")) sendText("h");
+if (taipoKeysPressed == getTaipoBitmap("AE")) sendText("d");
+if (taipoKeysPressed == getTaipoBitmap("RI")) sendText("g");
+if (taipoKeysPressed == getTaipoBitmap("RT")) sendText("x");
+if (taipoKeysPressed == getTaipoBitmap("IO")) sendText("k");
+if (taipoKeysPressed == getTaipoBitmap("SE")) sendText("v");
+if (taipoKeysPressed == getTaipoBitmap("NA")) sendText("j");
+if (taipoKeysPressed == getTaipoBitmap("RE")) sendText("m");
+if (taipoKeysPressed == getTaipoBitmap("IA")) sendText("w");

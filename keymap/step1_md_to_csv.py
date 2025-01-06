@@ -1,3 +1,30 @@
+# Data extraction script
+# This parses the .md documentation into a csv bitmask
+
+# Input example:
+"""
+--##  y      Y     5     F5
+----
+
+-#-#  f      F     6     F6
+----
+"""
+
+
+# Output example:
+"""
+R,S,N,I,A,O,T,E,0,1,sendText
+1,0,0,0,0,0,0,0,0,0,r
+0,0,1,1,0,0,0,0,0,0,y
+0,1,0,1,0,0,0,0,0,0,f
+"""
+
+# Eventual output target:
+#   if (taipoKeysPressed == getTaipoBitmap("RS")) sendText("b");
+#  Order: RSNIAOTE01
+#  01 = Thumb buttons
+#  RSNIAOTE = buttons
+
 # %%
 import pandas as pd
 
@@ -38,6 +65,15 @@ df = columns_defined.copy()
 df = pd.melt(df,
              id_vars=["input_top_row","input_bottom_row"],
              var_name="input_thumb",
-             value_name="output",
+             value_name="sendText",
              )
-df.head()
+df["keymask"] = df[[
+    "input_top_row",
+    "input_bottom_row",
+    "input_thumb",
+    ]].agg(''.join, axis=1)
+df["keymask"] = df["keymask"].str.replace("-","0")
+df["keymask"] = df["keymask"].str.replace("#","1")
+df[["R","S","N","I","A","O","T","E","0","1"]] = df["keymask"].apply(lambda x: pd.Series(list(x)))
+df = df[["R","S","N","I","A","O","T","E","0","1","sendText"]].copy()
+df.to_csv("keymap.csv",index=False)
