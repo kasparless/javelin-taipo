@@ -3,6 +3,8 @@ Prototype Taipo layer for Javelin, implemented in Javelin-Script.
 
 This repo: https://github.com/kasparless/javelin-taipo
 
+### [Installation instructions](./install.md)
+
 ## Javelin sites
 
 Javelin is incredible software.  Go check it out:
