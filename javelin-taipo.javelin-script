@@ -324,9 +324,9 @@ func getTaipoBitmap(string) var{
   var i = 0;
   var bitmap = 0;
   while (string[i] != 0){
-    if (string[i] == "1"[0]) { // when using an index, it converts the string to decimal, so need to convert other string into decimal too
+    if (string[i] == "0"[0]) { // when using an index, it converts the string to decimal, so need to convert other string into decimal too
       bitmap = bitmap | (1 << 9);
-    } else if (string[i] == "2"[0]) {
+    } else if (string[i] == "1"[0]) {
       bitmap = bitmap | (1 << 8);
     } else if (string[i] == "R"[0]) {
       bitmap = bitmap | (1 << 7);
