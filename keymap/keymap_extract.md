@@ -95,23 +95,20 @@ Input Output Outer Inner Both
 -#--  '      "     `
 #---
 
-###-  '      "     `
-----
-
 -###  Tab    Del   Ins
 ----
 
 ----  Enter  Esc   AltGr
 -###
 
-#---  Gui    Right PgUp Layer 3
+#---  Gui    Right PgUp  Layer 3
 #---
 
--#--  Alt    Up    Home Layer 2
+-#--  Alt    Up    Home  Layer 2
 -#--
 
---#-  Ctrl   Down  End  Layer 1
+--#-  Ctrl   Down  End   Layer 1
 --#-
 
----#  Shift  Left  PgDn Layer 0
+---#  Shift  Left  PgDn  Layer 0
 ---#
