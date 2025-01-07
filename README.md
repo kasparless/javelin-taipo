@@ -13,6 +13,10 @@ https://lim.au/#/software/javelin-steno
 
 https://github.com/jthlim/javelin-steno
 
+Javelin-Script
+
+https://github.com/jthlim/javelin-steno/blob/main/script.md
+
 ## Taipo reference sites
 
 Taipo Main site
