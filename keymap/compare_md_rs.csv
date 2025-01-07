@@ -1,0 +1,158 @@
+bin_code,sendText,rust_action,include,textType,notes,matches
+100000,a,Simple(Keyboard::A),Y,alpha,,y
+1100000000,b,Simple(Keyboard::B),Y,alpha,,y
+10100,c,Simple(Keyboard::C),Y,alpha,,y
+100100,d,Simple(Keyboard::D),Y,alpha,,y
+100,e,Simple(Keyboard::E),Y,alpha,,y
+101000000,f,Simple(Keyboard::F),Y,alpha,,y
+1001000000,g,Simple(Keyboard::G),Y,alpha,,y
+1100,h,Simple(Keyboard::H),Y,alpha,,y
+1000000,i,Simple(Keyboard::I),Y,alpha,,y
+10100000,j,Simple(Keyboard::J),Y,alpha,,y
+1010000,k,Simple(Keyboard::K),Y,alpha,,y
+110000,l,Simple(Keyboard::L),Y,alpha,,y
+1000000100,m,Simple(Keyboard::M),Y,alpha,,y
+10000000,n,Simple(Keyboard::N),Y,alpha,,y
+10000,o,Simple(Keyboard::O),Y,alpha,,y
+110000000,p,Simple(Keyboard::P),Y,alpha,,y
+101000,q,Simple(Keyboard::Q),Y,alpha,,y
+1000000000,r,Simple(Keyboard::R),Y,alpha,,y
+100000000,s,Simple(Keyboard::S),Y,alpha,,y
+1000,t,Simple(Keyboard::T),Y,alpha,,y
+11000,u,Simple(Keyboard::U),Y,alpha,,y
+100000100,v,Simple(Keyboard::V),Y,alpha,,y
+1100000,w,Simple(Keyboard::W),Y,alpha,,y
+1000001000,x,Simple(Keyboard::X),Y,alpha,,y
+11000000,y,Simple(Keyboard::Y),Y,alpha,,y
+1010000000,z,Simple(Keyboard::Z),Y,alpha,,y
+100010,A,Shifted(Keyboard::A),Y,alpha_cap,,y
+1100000010,B,Shifted(Keyboard::B),Y,alpha_cap,,y
+10110,C,Shifted(Keyboard::C),Y,alpha_cap,,y
+100110,D,Shifted(Keyboard::D),Y,alpha_cap,,y
+110,E,Shifted(Keyboard::E),Y,alpha_cap,,y
+101000010,F,Shifted(Keyboard::F),Y,alpha_cap,,y
+1001000010,G,Shifted(Keyboard::G),Y,alpha_cap,,y
+1110,H,Shifted(Keyboard::H),Y,alpha_cap,,y
+1000010,I,Shifted(Keyboard::I),Y,alpha_cap,,y
+10100010,J,Shifted(Keyboard::J),Y,alpha_cap,,y
+1010010,K,Shifted(Keyboard::K),Y,alpha_cap,,y
+110010,L,Shifted(Keyboard::L),Y,alpha_cap,,y
+1000000110,M,Shifted(Keyboard::M),Y,alpha_cap,,y
+10000010,N,Shifted(Keyboard::N),Y,alpha_cap,,y
+10010,O,Shifted(Keyboard::O),Y,alpha_cap,,y
+110000010,P,Shifted(Keyboard::P),Y,alpha_cap,,y
+101010,Q,Shifted(Keyboard::Q),Y,alpha_cap,,y
+1000000010,R,Shifted(Keyboard::R),Y,alpha_cap,,y
+100000010,S,Shifted(Keyboard::S),Y,alpha_cap,,y
+1010,T,Shifted(Keyboard::T),Y,alpha_cap,,y
+11010,U,Shifted(Keyboard::U),Y,alpha_cap,,y
+100000110,V,Shifted(Keyboard::V),Y,alpha_cap,,y
+1100010,W,Shifted(Keyboard::W),Y,alpha_cap,,y
+1000001010,X,Shifted(Keyboard::X),Y,alpha_cap,,y
+11000010,Y,Shifted(Keyboard::Y),Y,alpha_cap,,y
+1010000010,Z,Shifted(Keyboard::Z),Y,alpha_cap,,y
+10001010,Down,Simple(Keyboard::DownArrow),N,arrow,,y
+1000110,Left,Simple(Keyboard::LeftArrow),N,arrow,,y
+1000100010,Right,Simple(Keyboard::RightArrow),N,arrow,,y
+100010010,Up,Simple(Keyboard::UpArrow),N,arrow,,y
+10111,F1,Simple(Keyboard::F1),N,F-key,,y
+1111,F10,Simple(Keyboard::F10),N,F-key,,y
+100111,F11,,N,F-key,,not implemented
+1001000011,F12,,N,F-key,,not implemented
+11011,F2,Simple(Keyboard::F2),N,F-key,,y
+101011,F3,Simple(Keyboard::F3),N,F-key,,y
+110011,F4,Simple(Keyboard::F4),N,F-key,,y
+11000011,F5,Simple(Keyboard::F5),N,F-key,,y
+101000011,F6,Simple(Keyboard::F6),N,F-key,,y
+110000011,F7,Simple(Keyboard::F7),N,F-key,,y
+1010000011,F8,Simple(Keyboard::F8),N,F-key,,y
+1100000011,F9,Simple(Keyboard::F9),N,F-key,,y
+1000111,Layer 0,,N,layer,,not implemented
+10001011,Layer 1,,N,layer,,not implemented
+100010011,Layer 2,,N,layer,,not implemented
+1000100011,Layer 3,,N,layer,,not implemented
+100010000,Alt,OneShot(Mods::ALT),N,modifier,,y
+11101,AltGr,,N,modifier,,not implemented
+10001000,Ctrl,OneShot(Mods::CONTROL),N,modifier,,y
+1000100000,Gui,OneShot(Mods::GUI),N,modifier,,y
+1000100,Shift,OneShot(Mods::SHIFT),N,modifier,,y
+0,Mu,,N,Mu,,Mu
+1101,0,Simple(Keyboard::Keyboard0),Y,number,,y
+10101,1,Simple(Keyboard::Keyboard1),Y,number,,y
+11001,2,Simple(Keyboard::Keyboard2),Y,number,,y
+101001,3,Simple(Keyboard::Keyboard3),Y,number,,y
+110001,4,Simple(Keyboard::Keyboard4),Y,number,,y
+11000001,5,Simple(Keyboard::Keyboard5),Y,number,,y
+101000001,6,Simple(Keyboard::Keyboard6),Y,number,,y
+110000001,7,Simple(Keyboard::Keyboard7),Y,number,,y
+1010000001,8,Simple(Keyboard::Keyboard8),Y,number,,y
+1100000001,9,Simple(Keyboard::Keyboard9),Y,number,,y
+11,unassigned,Release,N,placeholder,,bbq specific
+11111,unassigned,,N,placeholder,,mu
+1001001,unassigned,,N,placeholder,,mu
+1001011,unassigned,,N,placeholder,,mu
+1100011,unassigned,Simple(Keyboard::F12),N,placeholder,,diff
+10000111,unassigned,,N,placeholder,,mu
+10010011,unassigned,,N,placeholder,,mu
+100001011,unassigned,,N,placeholder,,mu
+100100011,unassigned,,N,placeholder,,mu
+111000011,unassigned,,N,placeholder,,mu
+1000000111,unassigned,,N,placeholder,,mu
+1000010001,unassigned,,N,placeholder,,mu
+1000010011,unassigned,,N,placeholder,,mu
+10,Backspace,Simple(Keyboard::Space),Y,special,,diff
+111000010,Del,Simple(Keyboard::DeleteForward),Y,special,,y
+11100,Enter,Simple(Keyboard::ReturnEnter),Y,special,,y
+11110,Esc,Simple(Keyboard::Escape),Y,special,,y
+111000001,Ins,Simple(Keyboard::Insert),N,special,maybe?,y
+1,Space,Simple(Keyboard::DeleteBackspace),Y,special,,diff
+111000000,Tab,Simple(Keyboard::Tab),Y,special,,y
+1010011,Copy,,Y,special_edit,,not implemented
+1000001011,Cut,,Y,special_edit,,not implemented
+100000111,Paste,Simple(Keyboard::F11),Y,special_edit,,diff
+10100011,Undo,,Y,special_edit,,not implemented
+10001001,End,Simple(Keyboard::End),N,special_nav,maybe?,y
+100010001,Home,Simple(Keyboard::Home),N,special_nav,maybe?,y
+1000101,PgDn,Simple(Keyboard::PageDown),N,special_nav,maybe?,y
+1000100001,PgUp,Simple(Keyboard::PageUp),N,special_nav,maybe?,y
+10000011,Brightness Down,,N,special_os,,not implemented
+100000011,Brightness Up,,N,special_os,,not implemented
+100011,Next Track,,N,special_os,,not implemented
+1000011,Play/Pause,,N,special_os,,not implemented
+111,Previous Track,,N,special_os,,not implemented
+1000000011,Print Screen,,N,special_os,,not implemented
+1011,Volume Down,,N,special_os,,not implemented
+10011,Volume Up,,N,special_os,,not implemented
+100100000,',Simple(Keyboard::Apostrophe),Y,symbol,,y
+10010000,-,Simple(Keyboard::Minus),Y,symbol,,y
+1001010,!,Shifted(Keyboard::Keyboard1),Y,symbol,,y
+100100010,"""",Shifted(Keyboard::Apostrophe),Y,symbol,,y
+1001000001,#,Shifted(Keyboard::Keyboard3),Y,symbol,,y
+1000000101,$,Shifted(Keyboard::Keyboard4),Y,symbol,,y
+10010001,%,Shifted(Keyboard::Keyboard5),Y,symbol,,y
+1100001,&,Shifted(Keyboard::Keyboard7),Y,symbol,,y
+101,(,Shifted(Keyboard::Keyboard9),Y,symbol,,y
+1000001,),Shifted(Keyboard::Keyboard0),Y,symbol,,y
+100000101,*,Shifted(Keyboard::Keyboard8),Y,symbol,,y
+10000100,",",Simple(Keyboard::Comma),Y,symbol,,y
+10000110,.,Simple(Keyboard::Dot),Y,symbol,,y
+100001000,/,Simple(Keyboard::ForwardSlash),Y,symbol,,y
+1000010010,:,Shifted(Keyboard::Semicolon),Y,symbol,,y
+1000010000,;,Simple(Keyboard::Semicolon),Y,symbol,,y
+1001000,?,Shifted(Keyboard::ForwardSlash),Y,symbol,,y
+100101,@,Shifted(Keyboard::Keyboard2),Y,symbol,,y
+1001,[,Simple(Keyboard::LeftBrace),Y,symbol,,y
+100001010,\,Simple(Keyboard::Backslash),Y,symbol,,y
+10000001,],Simple(Keyboard::RightBrace),Y,symbol,,y
+1000001001,^,Shifted(Keyboard::Keyboard6),Y,symbol,,y
+10010010,_,Shifted(Keyboard::Minus),Y,symbol,,y
+100100001,`,Simple(Keyboard::Grave),Y,symbol,,y
+100100001,`,Simple(Keyboard::Grave),Y,symbol,,y
+10001,{,Shifted(Keyboard::LeftBrace),Y,symbol,,y
+100001001,|,Shifted(Keyboard::Backslash),Y,symbol,,y
+100000001,},Shifted(Keyboard::RightBrace),Y,symbol,,y
+10000101,~,Shifted(Keyboard::Grave),Y,symbol,,y
+1010001,+,Shifted(Keyboard::Equal),Y,symbol,,y
+100001,<,Shifted(Keyboard::Comma),Y,symbol,,y
+10100001,=,Simple(Keyboard::Equal),Y,symbol,,y
+1000000001,>,Shifted(Keyboard::Dot),Y,symbol,,y
