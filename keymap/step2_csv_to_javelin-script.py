@@ -1,5 +1,5 @@
 # Input example:
-# 'include' is a column added manually in spreadsheet during dev phase
+# 'include' is merged from a separate mask list, edited manually
 """
 R,S,N,I,A,O,T,E,0,1,sendText,include
 1,0,0,0,0,0,0,0,0,0,r,Y
@@ -18,19 +18,23 @@ import csv
 import pandas as pd
 # %%
 key_list = ["R","S","N","I","A","O","T","E","0","1"]
+
 def javelin_keystring_template(row):
   text = row["sendText"]
   keypress = convertTextToKeypress(text)
   return rf'if (taipoKeysPressed == getTaipoBitmap("{row["taipoKeyString"]}")) {keypress}'
-# %% List of scan codes https://github.com/jthlim/javelin-steno/blob/main/script.md#constants-1
+
 def convertTextToKeypress(text):
+  # List of scan codes https://github.com/jthlim/javelin-steno/blob/main/script.md#constants-1
   keypress = rf'sendText("{text}");'
   # Modifiers, Arrows keys, Page up, page down, end & home already implemented within the script itself, no need to include those there
-  if text.lower() == "tab": keypress = f"tapScanCode(0x2b);" # SC_TAB
-  if text.lower() == "enter": keypress = f"tapScanCode(0x28);" # SC_ENTER
-  if text.lower() == "del": keypress = f"tapScanCode(0x4c);" # SC_DELETE
-  if text.lower() == "esc": keypress = f"tapScanCode(0x29);" # SC_ESC
+  if text.lower() == "tab": keypress = r"tapScanCode(0x2b); // tab" # SC_TAB
+  if text.lower() == "enter": keypress = r"tapScanCode(0x28); // enter" # SC_ENTER
+  if text.lower() == "del": keypress = r"tapScanCode(0x4c); // del" # SC_DELETE
+  if text.lower() == "esc": keypress = r"tapScanCode(0x29); // esc" # SC_ESC
   # TODO
+  if text.lower() == "space": keypress = r"tapScanCode(); // space" # SC_ESC
+  if text.lower() == "backspace": keypress = r"tapScanCode(); // backspace" # SC_ESC
   if text.lower() == "ins": keypress = f"tapScanCode();" # 
   if text.lower() == "altgr": keypress = f"tapScanCode();" # 
   if text.lower() == "print screen": keypress = f"tapScanCode();" # 
@@ -56,17 +60,23 @@ def convertTextToKeypress(text):
 
   # Special
   #                                              press ctrl          press X               release X          release ctrl
-  if text.lower() == "cut": keypress = f"pressScanCode(0xe0);pressScanCode(0x1b);releaseScanCode(0x1b);releaseScanCode(0xe0);"
+  if text.lower() == "cut": keypress = r"pressScanCode(0xe0);pressScanCode(0x1b);releaseScanCode(0x1b);releaseScanCode(0xe0); // cut"
   #                                               press ctrl          press C               release C          release ctrl
-  if text.lower() == "copy": keypress = f"pressScanCode(0xe0);pressScanCode(0x06);releaseScanCode(0x06);releaseScanCode(0xe0);"
+  if text.lower() == "copy": keypress = r"pressScanCode(0xe0);pressScanCode(0x06);releaseScanCode(0x06);releaseScanCode(0xe0); // copy"
   #                                               press ctrl          press V               release V          release ctrl
-  if text.lower() == "paste": keypress = f"pressScanCode(0xe0);pressScanCode(0x19);releaseScanCode(0x19);releaseScanCode(0xe0);"
+  if text.lower() == "paste": keypress = r"pressScanCode(0xe0);pressScanCode(0x19);releaseScanCode(0x19);releaseScanCode(0xe0); // paste"
   #                                               press ctrl          press Z               release Z          release ctrl
-  if text.lower() == "undo": keypress = f"pressScanCode(0xe0);pressScanCode(0x1d);releaseScanCode(0x1d);releaseScanCode(0xe0);"
+  if text.lower() == "undo": keypress = r"pressScanCode(0xe0);pressScanCode(0x1d);releaseScanCode(0x1d);releaseScanCode(0xe0); // undo"
   
   return keypress
 # %%
-df = pd.read_csv("keymap.csv")
+df = pd.merge(
+  pd.read_csv("keymap.csv"),
+  pd.read_csv("include_mask.csv"),
+  how="left",
+  on="sendText",
+)
+# %%
 df = df[df["include"]=="Y"]
 for key in key_list:
     df[key] = df[key].replace(0,"")
