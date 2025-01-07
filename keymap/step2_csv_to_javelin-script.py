@@ -30,7 +30,7 @@ def convertTextToKeypress(text):
   if text == '\\': text = '\\\\' # Escape the slash
   keypress = rf'sendText("{text}");'
 
-  # Modifiers, Arrows keys, Page up, page down, end & home already implemented within the script itself, no need to include those there
+  # Modifiers, Arrows keys, Page up, page down, end, home & altgr already implemented within the script itself, no need to include those there
   if text.lower() == "tab": keypress = r"tapScanCode(0x2b); // tab" # SC_TAB
   if text.lower() == "space": keypress = r"tapScanCode(0x2c); // space" # SC_SPACE
   if text.lower() == "enter": keypress = r"tapScanCode(0x28); // enter" # SC_ENTER
@@ -56,7 +56,6 @@ def convertTextToKeypress(text):
   if text.lower() == "next track": keypress = r"tapScanCode(0xa5); // next track" # SC_CONSUMER_SCAN_NEXT_TRACK 
   if text.lower() == "previous track": keypress = r"tapScanCode(0xa6); // prev track" # SC_CONSUMER_SCAN_PREVIOUS_TRACK 
   # TODO
-  if text.lower() == "altgr": keypress = f"tapScanCode();" # 
   if text.lower() == "print screen": keypress = f"tapScanCode();" # 
   if text.lower() == "brightness up": keypress = f"tapScanCode();" # 
   if text.lower() == "brightness down": keypress = f"tapScanCode();" # 

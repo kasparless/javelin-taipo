@@ -321,6 +321,12 @@ func taipoOneshotUpdate(side) {
     taipoKeysCurrentlyPressed = taipoKeysCurrentlyPressedR;
   }
 
+  if (taipoKeysCurrentlyPressed == getTaipoBitmap("OTE1")) { // ALT_GR
+    pressScanCode(0xe6); // SC_R_ALT
+  } else {
+    releaseScanCode(0xe6); // SC_R_ALT
+  }
+
   // Format (taipoCheckOneshot(side, getTaipoBitmap("Keys"), getTaipoBitmap("Excluded keys")))
   // This allows for multiple to be pressed at the same time
   if (taipoCheckOneshot(side, getTaipoBitmap("RA"), getTaipoBitmap("01"))) { // GUI 
