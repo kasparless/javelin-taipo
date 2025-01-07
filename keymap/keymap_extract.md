@@ -92,9 +92,6 @@ Input Output Outer Inner Both
 #---  ;      :
 -#--
 
-----  ;      :
-###-
-
 -#--  '      "     `
 #---
 

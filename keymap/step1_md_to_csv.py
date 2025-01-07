@@ -27,7 +27,6 @@ R,S,N,I,A,O,T,E,0,1,sendText
 
 # %%
 import pandas as pd
-
 # %%
 in_df = pd.read_fwf("keymap_extract.md")
 # %%
