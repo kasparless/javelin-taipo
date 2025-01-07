@@ -30,11 +30,10 @@ if (taipoKeysPressed == getTaipoBitmap("NO")) sendText("-");
 if (taipoKeysPressed == getTaipoBitmap("IT")) sendText("?");
 if (taipoKeysPressed == getTaipoBitmap("NE")) sendText("\,");
 if (taipoKeysPressed == getTaipoBitmap("RO")) sendText(";");
-if (taipoKeysPressed == getTaipoBitmap("AOT")) sendText(";");
 if (taipoKeysPressed == getTaipoBitmap("SA")) sendText("'");
-if (taipoKeysPressed == getTaipoBitmap("RSN")) sendText("'");
-if (taipoKeysPressed == getTaipoBitmap("SNI")) tapScanCode(0x2b);
-if (taipoKeysPressed == getTaipoBitmap("OTE")) tapScanCode(0x28);
+if (taipoKeysPressed == getTaipoBitmap("SNI")) tapScanCode(0x2b); // tab
+if (taipoKeysPressed == getTaipoBitmap("OTE")) tapScanCode(0x28); // enter
+if (taipoKeysPressed == getTaipoBitmap("0")) tapScanCode(); // backspace
 if (taipoKeysPressed == getTaipoBitmap("R0")) sendText("R");
 if (taipoKeysPressed == getTaipoBitmap("S0")) sendText("S");
 if (taipoKeysPressed == getTaipoBitmap("N0")) sendText("N");
@@ -66,8 +65,10 @@ if (taipoKeysPressed == getTaipoBitmap("NO0")) sendText("_");
 if (taipoKeysPressed == getTaipoBitmap("IT0")) sendText("!");
 if (taipoKeysPressed == getTaipoBitmap("NE0")) sendText(".");
 if (taipoKeysPressed == getTaipoBitmap("RO0")) sendText(":");
-if (taipoKeysPressed == getTaipoBitmap("AOT0")) sendText(":");
-if (taipoKeysPressed == getTaipoBitmap("SNI0")) tapScanCode(0x4c);
+if (taipoKeysPressed == getTaipoBitmap("SA0")) sendText(""");
+if (taipoKeysPressed == getTaipoBitmap("SNI0")) tapScanCode(0x4c); // del
+if (taipoKeysPressed == getTaipoBitmap("OTE0")) tapScanCode(0x29); // esc
+if (taipoKeysPressed == getTaipoBitmap("1")) tapScanCode(); // space
 if (taipoKeysPressed == getTaipoBitmap("R1")) sendText(">");
 if (taipoKeysPressed == getTaipoBitmap("S1")) sendText("}");
 if (taipoKeysPressed == getTaipoBitmap("N1")) sendText("]");
@@ -98,8 +99,8 @@ if (taipoKeysPressed == getTaipoBitmap("ST1")) sendText("|");
 if (taipoKeysPressed == getTaipoBitmap("NO1")) sendText("%");
 if (taipoKeysPressed == getTaipoBitmap("NE1")) sendText("~");
 if (taipoKeysPressed == getTaipoBitmap("SA1")) sendText("`");
-if (taipoKeysPressed == getTaipoBitmap("RSN1")) sendText("`");
-if (taipoKeysPressed == getTaipoBitmap("RT01")) pressScanCode(0xe0);pressScanCode(0x1b);releaseScanCode(0x1b);releaseScanCode(0xe0);
-if (taipoKeysPressed == getTaipoBitmap("IO01")) pressScanCode(0xe0);pressScanCode(0x06);releaseScanCode(0x06);releaseScanCode(0xe0);
-if (taipoKeysPressed == getTaipoBitmap("SE01")) pressScanCode(0xe0);pressScanCode(0x19);releaseScanCode(0x19);releaseScanCode(0xe0);
-if (taipoKeysPressed == getTaipoBitmap("NA01")) pressScanCode(0xe0);pressScanCode(0x1d);releaseScanCode(0x1d);releaseScanCode(0xe0);
+if (taipoKeysPressed == getTaipoBitmap("SA1")) sendText("`");
+if (taipoKeysPressed == getTaipoBitmap("RT01")) pressScanCode(0xe0);pressScanCode(0x1b);releaseScanCode(0x1b);releaseScanCode(0xe0); // cut
+if (taipoKeysPressed == getTaipoBitmap("IO01")) pressScanCode(0xe0);pressScanCode(0x06);releaseScanCode(0x06);releaseScanCode(0xe0); // copy
+if (taipoKeysPressed == getTaipoBitmap("SE01")) pressScanCode(0xe0);pressScanCode(0x19);releaseScanCode(0x19);releaseScanCode(0xe0); // paste
+if (taipoKeysPressed == getTaipoBitmap("NA01")) pressScanCode(0xe0);pressScanCode(0x1d);releaseScanCode(0x1d);releaseScanCode(0xe0); // undo
