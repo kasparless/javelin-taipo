@@ -47,18 +47,18 @@ def convertTextToKeypress(text):
   if text.lower() == "f7": keypress = f"tapScanCode(0x40); // f7" # 
   if text.lower() == "f8": keypress = f"tapScanCode(0x41); // f8" # 
   if text.lower() == "f9": keypress = f"tapScanCode(0x42); // f9" # 
-  if text.lower() == "f10": keypress = f"tapScanCode(0x43) // f10" # 
-  if text.lower() == "f11": keypress = f"tapScanCode(0x44) // f11" # 
-  if text.lower() == "f12": keypress = f"tapScanCode(0x45) // f12" # 
+  if text.lower() == "f10": keypress = f"tapScanCode(0x43); // f10" # 
+  if text.lower() == "f11": keypress = f"tapScanCode(0x44); // f11" # 
+  if text.lower() == "f12": keypress = f"tapScanCode(0x45); // f12" # 
   if text.lower() == "play/pause": keypress = r"tapScanCode(0xbd); // play pause" # SC_CONSUMER_PLAY_PAUSE
   if text.lower() == "volume up": keypress = r"tapScanCode(0x80); // vol up" # SC_VOLUME_UP 
   if text.lower() == "volume down": keypress = r"tapScanCode(0x81); // vol down" # SC_VOLUME_DOWN 
   if text.lower() == "next track": keypress = r"tapScanCode(0xa5); // next track" # SC_CONSUMER_SCAN_NEXT_TRACK 
   if text.lower() == "previous track": keypress = r"tapScanCode(0xa6); // prev track" # SC_CONSUMER_SCAN_PREVIOUS_TRACK 
   # TODO
-  if text.lower() == "print screen": keypress = f"tapScanCode();" # 
-  if text.lower() == "brightness up": keypress = f"tapScanCode();" # 
-  if text.lower() == "brightness down": keypress = f"tapScanCode();" # 
+  if text.lower() == "print screen": keypress = f"tapScanCode(0x46); //print screen" # SC_SYS_RQ
+  if text.lower() == "brightness up": keypress = f"tapScanCode(0xde); // brightness up" # 
+  if text.lower() == "brightness down": keypress = f"tapScanCode(0xdf); // brightness down" # 
 
   # Special
   #                                              press ctrl          press X               release X          release ctrl

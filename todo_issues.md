@@ -11,5 +11,4 @@
 - AltGr not confirmed on windows
 - scan time might need some tuning, eg PgUp and PgDn combos hard to hit
 - Not implemented list:
-  - F-keys
-  - Insert, Print Screen, Brightness, Layer keys (do this in Javelin anyway)
+  - Layer keys (do this in Javelin anyway)
