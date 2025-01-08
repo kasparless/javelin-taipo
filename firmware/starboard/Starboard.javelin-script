@@ -1,0 +1,1093 @@
+// Generated from javelin-layout file
+var layer;
+func setLayer(layerIndex, layerIdEvent) {
+  releaseAll();
+  layer = layerIndex;
+  sendEvent(layerIdEvent);
+}
+
+func dispatchToLayer(functions) {
+  var f = functions[[[resolveLayerIndex()]]];
+  f();
+}
+
+func resolveLayerIndex() var {
+  return layer;
+}
+
+func activate0() {
+  setLayer(0, "layer_id: 0");
+
+}
+
+func activate1() {
+  setLayer(1, "layer_id: 180924322");
+
+}
+
+func activateDynamic() {
+  dispatchToLayer([[[@activate0, @activate1]]]);
+}
+func activateGlobal() {
+
+}
+func deactivate0() {
+
+}
+
+func deactivate1() {
+
+}
+
+func deactivateDynamic() {}
+func deactivateGlobal() {
+
+}
+var postPress;
+var postRelease;
+
+func _pressScanCode(scanCode, isModifier) {
+  pressScanCode(scanCode);
+  if (isModifier) return;
+
+  if (postPress) {
+    var localPostPress = postPress;
+    postPress = 0;
+    localPostPress();
+  }
+}
+
+func _releaseScanCode(scanCode, isModifier) {
+  releaseScanCode(scanCode);
+  if (isModifier) return;
+
+  if (postRelease) {
+    var localPostRelease = postRelease;
+    postRelease = 0;
+    localPostRelease();
+  }
+}
+// Layer 01 Script: taipo
+//https://inkeys.wiki/en/keymaps/taipo
+const ONESHOT_TIMEOUT = 100;
+const TAIPO_TIMEOUT = 50; // after this timeout, the keys are considered sent. Set to -1 to change this to on release
+
+// Usage pressTaipoX(0) //0 = left, 1 = right
+
+// Binary of pressed keys
+// Order:
+// InnerOuter RSNI AOTE
+var taipoKeysPressedR = 0x0;
+var taipoKeysCurrentlyPressedR = 0x0; // Keys that are currently being held down, used to check if any keys are being held down
+
+var taipoKeysPressedL = 0x0;
+var taipoKeysCurrentlyPressedL = 0x0; // Keys that are currently being held down, used to check if any keys are being held down
+
+func pressTaipoBitMask(side, bitmask) {
+  if (side == 0) {
+    taipoKeysPressedL = taipoKeysPressedL | bitmask; // Set bit
+    taipoKeysCurrentlyPressedL = taipoKeysCurrentlyPressedL | bitmask;
+  } else {
+    taipoKeysPressedR = taipoKeysPressedR | bitmask; // Set bit
+    taipoKeysCurrentlyPressedR = taipoKeysCurrentlyPressedR | bitmask;
+  }
+  taipoLayerPress(side);
+}
+
+func releaseTaipoBitMask(side, bitmask) {
+  if (side == 0) {
+    taipoKeysCurrentlyPressedL = taipoKeysCurrentlyPressedL & ~bitmask; // Clear bit
+  } else {
+    taipoKeysCurrentlyPressedR = taipoKeysCurrentlyPressedR & ~bitmask; // Clear bit
+  }
+  taipoLayerRelease(side);
+}
+
+// RSNI
+func pressTaipoInner(side) {
+  pressTaipoBitMask(side, (1 << 9));
+}
+
+func releaseTaipoInner(side) {
+  releaseTaipoBitMask(side, (1 << 9)); // Clear bit position 9 (Inner)
+}
+
+func pressTaipoOuter(side) {
+  pressTaipoBitMask(side, (1 << 8)); // Bit position 8 (Outer)
+}
+
+func releaseTaipoOuter(side) {
+  releaseTaipoBitMask(side, (1 << 8)); // Clear bit position 9 (Outer)
+}
+
+func pressTaipoR(side) {
+  pressTaipoBitMask(side, (1 << 7)); // Bit position 7 (R)
+}
+
+func releaseTaipoR(side) {
+  releaseTaipoBitMask(side, (1 << 7)); // Clear bit position 7 (R)
+}
+
+func pressTaipoS(side) {
+  pressTaipoBitMask(side, (1 << 6)); // Bit position 6 (S)
+}
+
+func releaseTaipoS(side) {
+  releaseTaipoBitMask(side, (1 << 6)); // Clear bit position 6 (S)
+}
+
+func pressTaipoN(side) {
+  pressTaipoBitMask(side, (1 << 5)); // Bit position 5 (N)
+}
+
+func releaseTaipoN(side) {
+  releaseTaipoBitMask(side, (1 << 5)); // Clear bit position 5 (N)
+}
+
+func pressTaipoI(side) {
+  pressTaipoBitMask(side, (1 << 4)); // Bit position 4 (I)
+}
+
+func releaseTaipoI(side) {
+  releaseTaipoBitMask(side, (1 << 4)); // Clear bit position 4 (I)
+}
+
+// AOTE
+
+func pressTaipoA(side) {
+  pressTaipoBitMask(side, (1 << 3)); // Bit position 3 (A)
+}
+
+func releaseTaipoA(side) {
+  releaseTaipoBitMask(side, (1 << 3)); // Clear bit position 3 (A)
+}
+
+func pressTaipoO(side) {
+  pressTaipoBitMask(side, (1 << 2)); // Bit position 2 (O)
+}
+
+func releaseTaipoO(side) {
+  releaseTaipoBitMask(side, (1 << 2)); // Clear bit position 2 (O)
+}
+
+func pressTaipoT(side) {
+  pressTaipoBitMask(side, (1 << 1)); // Bit position 1 (T)
+}
+
+func releaseTaipoT(side) {
+  releaseTaipoBitMask(side, (1 << 1)); // Clear bit position 1 (T)
+}
+
+func pressTaipoE(side) {
+  pressTaipoBitMask(side, (1 << 0)); // Bit position 0 (E)
+}
+
+func releaseTaipoE(side) {
+  releaseTaipoBitMask(side, (1 << 0)); // Clear bit position 0 (E)
+}
+
+// runs when a key is released
+func taipoLayerRelease(side) {
+  var taipoKeysPressed;
+  var taipoKeysCurrentlyPressed;
+
+  if (side == 0) {
+    taipoKeysPressed = taipoKeysPressedL;
+    taipoKeysCurrentlyPressed = taipoKeysCurrentlyPressedL;
+  } else {
+    taipoKeysPressed = taipoKeysPressedR;
+    taipoKeysCurrentlyPressed = taipoKeysCurrentlyPressedR;
+  }
+
+  taipoOneshotUpdate(side);
+  if (TAIPO_TIMEOUT == -1) {
+    // Only trigger key update when no keys pressed(key release)
+    if (taipoKeysCurrentlyPressed != 0) {return;}
+  taipoKeysUpdate(side);
+}
+}
+
+func taipoLayerPress(side) {
+  if (side == 0) {
+    stopTimer(49173);
+    startTimer(49173 /* random number */, ONESHOT_TIMEOUT, 0 /* is repeating */, @ { taipoOneshotUpdate(0); });
+  } else { // side = 1
+    stopTimer(64673);
+    startTimer(64673 /* random number */, ONESHOT_TIMEOUT, 0 /* is repeating */, @ { taipoOneshotUpdate(1); });
+  }
+
+  if (TAIPO_TIMEOUT != -1) {
+    // trigger after timeout
+    if (side == 0) {
+      stopTimer(07532);
+      startTimer(07532 /* random number */, TAIPO_TIMEOUT, 0 /* is repeating */, @ { taipoKeysUpdate(0); });
+    } else { // side = 1
+      stopTimer(24584);
+      startTimer(24584 /* random number */, TAIPO_TIMEOUT, 0 /* is repeating */, @ { taipoKeysUpdate(1); });
+    }
+  }
+}
+
+// Presses keys on trigger
+func taipoKeysUpdate(side) {
+  var taipoKeysPressed;
+  var taipoKeysCurrentlyPressed;
+
+  if (side == 0) {
+    taipoKeysPressed = taipoKeysPressedL;
+    taipoKeysCurrentlyPressed = taipoKeysCurrentlyPressedL;
+  } else {
+    taipoKeysPressed = taipoKeysPressedR;
+    taipoKeysCurrentlyPressed = taipoKeysCurrentlyPressedR;
+  }
+
+  printValue("taipoKeysCurrentlyPressed", taipoKeysCurrentlyPressed);
+
+  if (taipoKeysPressed == getTaipoBitmap("R")) sendText("r");
+  if (taipoKeysPressed == getTaipoBitmap("S")) sendText("s");
+  if (taipoKeysPressed == getTaipoBitmap("N")) sendText("n");
+  if (taipoKeysPressed == getTaipoBitmap("I")) sendText("i");
+  if (taipoKeysPressed == getTaipoBitmap("A")) sendText("a");
+  if (taipoKeysPressed == getTaipoBitmap("O")) sendText("o");
+  if (taipoKeysPressed == getTaipoBitmap("T")) sendText("t");
+  if (taipoKeysPressed == getTaipoBitmap("E")) sendText("e");
+  if (taipoKeysPressed == getTaipoBitmap("OE")) sendText("c");
+  if (taipoKeysPressed == getTaipoBitmap("OT")) sendText("u");
+  if (taipoKeysPressed == getTaipoBitmap("AT")) sendText("q");
+  if (taipoKeysPressed == getTaipoBitmap("AO")) sendText("l");
+  if (taipoKeysPressed == getTaipoBitmap("NI")) sendText("y");
+  if (taipoKeysPressed == getTaipoBitmap("SI")) sendText("f");
+  if (taipoKeysPressed == getTaipoBitmap("SN")) sendText("p");
+  if (taipoKeysPressed == getTaipoBitmap("RN")) sendText("z");
+  if (taipoKeysPressed == getTaipoBitmap("RS")) sendText("b");
+  if (taipoKeysPressed == getTaipoBitmap("TE")) sendText("h");
+  if (taipoKeysPressed == getTaipoBitmap("AE")) sendText("d");
+  if (taipoKeysPressed == getTaipoBitmap("RI")) sendText("g");
+  if (taipoKeysPressed == getTaipoBitmap("RT")) sendText("x");
+  if (taipoKeysPressed == getTaipoBitmap("IO")) sendText("k");
+  if (taipoKeysPressed == getTaipoBitmap("SE")) sendText("v");
+  if (taipoKeysPressed == getTaipoBitmap("NA")) sendText("j");
+  if (taipoKeysPressed == getTaipoBitmap("RE")) sendText("m");
+  if (taipoKeysPressed == getTaipoBitmap("IA")) sendText("w");
+  if (taipoKeysPressed == getTaipoBitmap("ST")) sendText("/");
+  if (taipoKeysPressed == getTaipoBitmap("NO")) sendText("-");
+  if (taipoKeysPressed == getTaipoBitmap("IT")) sendText("?");
+  if (taipoKeysPressed == getTaipoBitmap("NE")) sendText(",");
+  if (taipoKeysPressed == getTaipoBitmap("RO")) sendText(";");
+  if (taipoKeysPressed == getTaipoBitmap("SA")) sendText("'");
+  if (taipoKeysPressed == getTaipoBitmap("SNI")) tapScanCode(0x2b); // tab
+  if (taipoKeysPressed == getTaipoBitmap("OTE")) tapScanCode(0x28); // enter
+  if (taipoKeysPressed == getTaipoBitmap("0")) tapScanCode(0x2a); // backspace
+  if (taipoKeysPressed == getTaipoBitmap("R0")) sendText("R");
+  if (taipoKeysPressed == getTaipoBitmap("S0")) sendText("S");
+  if (taipoKeysPressed == getTaipoBitmap("N0")) sendText("N");
+  if (taipoKeysPressed == getTaipoBitmap("I0")) sendText("I");
+  if (taipoKeysPressed == getTaipoBitmap("A0")) sendText("A");
+  if (taipoKeysPressed == getTaipoBitmap("O0")) sendText("O");
+  if (taipoKeysPressed == getTaipoBitmap("T0")) sendText("T");
+  if (taipoKeysPressed == getTaipoBitmap("E0")) sendText("E");
+  if (taipoKeysPressed == getTaipoBitmap("OE0")) sendText("C");
+  if (taipoKeysPressed == getTaipoBitmap("OT0")) sendText("U");
+  if (taipoKeysPressed == getTaipoBitmap("AT0")) sendText("Q");
+  if (taipoKeysPressed == getTaipoBitmap("AO0")) sendText("L");
+  if (taipoKeysPressed == getTaipoBitmap("NI0")) sendText("Y");
+  if (taipoKeysPressed == getTaipoBitmap("SI0")) sendText("F");
+  if (taipoKeysPressed == getTaipoBitmap("SN0")) sendText("P");
+  if (taipoKeysPressed == getTaipoBitmap("RN0")) sendText("Z");
+  if (taipoKeysPressed == getTaipoBitmap("RS0")) sendText("B");
+  if (taipoKeysPressed == getTaipoBitmap("TE0")) sendText("H");
+  if (taipoKeysPressed == getTaipoBitmap("AE0")) sendText("D");
+  if (taipoKeysPressed == getTaipoBitmap("RI0")) sendText("G");
+  if (taipoKeysPressed == getTaipoBitmap("RT0")) sendText("X");
+  if (taipoKeysPressed == getTaipoBitmap("IO0")) sendText("K");
+  if (taipoKeysPressed == getTaipoBitmap("SE0")) sendText("V");
+  if (taipoKeysPressed == getTaipoBitmap("NA0")) sendText("J");
+  if (taipoKeysPressed == getTaipoBitmap("RE0")) sendText("M");
+  if (taipoKeysPressed == getTaipoBitmap("IA0")) sendText("W");
+  if (taipoKeysPressed == getTaipoBitmap("ST0")) sendText("\\");
+  if (taipoKeysPressed == getTaipoBitmap("NO0")) sendText("_");
+  if (taipoKeysPressed == getTaipoBitmap("IT0")) sendText("!");
+  if (taipoKeysPressed == getTaipoBitmap("NE0")) sendText(".");
+  if (taipoKeysPressed == getTaipoBitmap("RO0")) sendText(":");
+  if (taipoKeysPressed == getTaipoBitmap("SA0")) sendText("\"");
+  if (taipoKeysPressed == getTaipoBitmap("SNI0")) tapScanCode(0x4c); // del
+  if (taipoKeysPressed == getTaipoBitmap("OTE0")) tapScanCode(0x29); // esc
+  if (taipoKeysPressed == getTaipoBitmap("1")) tapScanCode(0x2c); // space
+  if (taipoKeysPressed == getTaipoBitmap("R1")) sendText(">");
+  if (taipoKeysPressed == getTaipoBitmap("S1")) sendText("}");
+  if (taipoKeysPressed == getTaipoBitmap("N1")) sendText("]");
+  if (taipoKeysPressed == getTaipoBitmap("I1")) sendText(")");
+  if (taipoKeysPressed == getTaipoBitmap("A1")) sendText("<");
+  if (taipoKeysPressed == getTaipoBitmap("O1")) sendText("{");
+  if (taipoKeysPressed == getTaipoBitmap("T1")) sendText("[");
+  if (taipoKeysPressed == getTaipoBitmap("E1")) sendText("(");
+  if (taipoKeysPressed == getTaipoBitmap("OE1")) sendText("1");
+  if (taipoKeysPressed == getTaipoBitmap("OT1")) sendText("2");
+  if (taipoKeysPressed == getTaipoBitmap("AT1")) sendText("3");
+  if (taipoKeysPressed == getTaipoBitmap("AO1")) sendText("4");
+  if (taipoKeysPressed == getTaipoBitmap("NI1")) sendText("5");
+  if (taipoKeysPressed == getTaipoBitmap("SI1")) sendText("6");
+  if (taipoKeysPressed == getTaipoBitmap("SN1")) sendText("7");
+  if (taipoKeysPressed == getTaipoBitmap("RN1")) sendText("8");
+  if (taipoKeysPressed == getTaipoBitmap("RS1")) sendText("9");
+  if (taipoKeysPressed == getTaipoBitmap("TE1")) sendText("0");
+  if (taipoKeysPressed == getTaipoBitmap("AE1")) sendText("@");
+  if (taipoKeysPressed == getTaipoBitmap("RI1")) sendText("#");
+  if (taipoKeysPressed == getTaipoBitmap("RT1")) sendText("^");
+  if (taipoKeysPressed == getTaipoBitmap("IO1")) sendText("+");
+  if (taipoKeysPressed == getTaipoBitmap("SE1")) sendText("*");
+  if (taipoKeysPressed == getTaipoBitmap("NA1")) sendText("=");
+  if (taipoKeysPressed == getTaipoBitmap("RE1")) sendText("$");
+  if (taipoKeysPressed == getTaipoBitmap("IA1")) sendText("&");
+  if (taipoKeysPressed == getTaipoBitmap("ST1")) sendText("|");
+  if (taipoKeysPressed == getTaipoBitmap("NO1")) sendText("%");
+  if (taipoKeysPressed == getTaipoBitmap("NE1")) sendText("~");
+  if (taipoKeysPressed == getTaipoBitmap("SA1")) sendText("`");
+  if (taipoKeysPressed == getTaipoBitmap("SA1")) sendText("`");
+  if (taipoKeysPressed == getTaipoBitmap("I01")) tapScanCode(0xbd); // play pause
+  if (taipoKeysPressed == getTaipoBitmap("A01")) tapScanCode(0xa5); // next track
+  if (taipoKeysPressed == getTaipoBitmap("O01")) tapScanCode(0x80); // vol up
+  if (taipoKeysPressed == getTaipoBitmap("T01")) tapScanCode(0x81); // vol down
+  if (taipoKeysPressed == getTaipoBitmap("E01")) tapScanCode(0xa6); // prev track
+  if (taipoKeysPressed == getTaipoBitmap("RT01")) {pressScanCode(0xe0);pressScanCode(0x1b);releaseScanCode(0x1b);releaseScanCode(0xe0);} // cut
+if (taipoKeysPressed == getTaipoBitmap("IO01")) {pressScanCode(0xe0);pressScanCode(0x06);releaseScanCode(0x06);releaseScanCode(0xe0);} // copy
+if (taipoKeysPressed == getTaipoBitmap("SE01")) {pressScanCode(0xe0);pressScanCode(0x19);releaseScanCode(0x19);releaseScanCode(0xe0);} // paste
+if (taipoKeysPressed == getTaipoBitmap("NA01")) {pressScanCode(0xe0);pressScanCode(0x1d);releaseScanCode(0x1d);releaseScanCode(0xe0);} // undo
+
+if (side == 0) { // reset
+  taipoKeysPressedL = 0;
+} else {
+  taipoKeysPressedR = 0;
+}
+}
+
+func taipoCheckOneshot(side, bitmap, excludeBitmap) var{
+  var taipoKeysPressed;
+  var taipoKeysCurrentlyPressed;
+  if (side == 0) {
+    taipoKeysPressed = taipoKeysPressedL;
+    taipoKeysCurrentlyPressed = taipoKeysCurrentlyPressedL;
+  } else {
+    taipoKeysPressed = taipoKeysPressedR;
+    taipoKeysCurrentlyPressed = taipoKeysCurrentlyPressedR;
+  }
+
+  var oneshot = (taipoKeysCurrentlyPressed & bitmap) == bitmap; // Check if keys held down
+  oneshot = oneshot && !(taipoKeysCurrentlyPressed & excludeBitmap); // Check that no excluded keys are held down
+  return oneshot;
+}
+
+// Update oneshot keys EX modifiers, arrow keys, etc
+func taipoOneshotUpdate(side) {
+  var taipoKeysPressed;
+  var taipoKeysCurrentlyPressed;
+  if (side == 0) {
+    taipoKeysPressed = taipoKeysPressedL;
+    taipoKeysCurrentlyPressed = taipoKeysCurrentlyPressedL;
+  } else {
+    taipoKeysPressed = taipoKeysPressedR;
+    taipoKeysCurrentlyPressed = taipoKeysCurrentlyPressedR;
+  }
+
+  if (taipoKeysCurrentlyPressed == getTaipoBitmap("OTE1")) { // ALT_GR
+    pressScanCode(0xe6); // SC_R_ALT
+  } else {
+    releaseScanCode(0xe6); // SC_R_ALT
+  }
+
+  // Format (taipoCheckOneshot(side, getTaipoBitmap("Keys"), getTaipoBitmap("Excluded keys")))
+  // This allows for multiple to be pressed at the same time
+  if (taipoCheckOneshot(side, getTaipoBitmap("RA"), getTaipoBitmap("01"))) { // GUI
+    pressScanCode(0xe3); // SC_L_META
+  } else if (!taipoCheckOneshot(!side, getTaipoBitmap("RA"), getTaipoBitmap("01"))){ // Release if other side not being held down
+    releaseScanCode(0xe3); // SC_L_META
+  }
+
+  if (taipoCheckOneshot(side, getTaipoBitmap("RA0"), getTaipoBitmap("1"))) { // LEFT
+    pressScanCode(0x50); // SC_LEFT
+  } else if (!taipoCheckOneshot(!side, getTaipoBitmap("RA0"), getTaipoBitmap("1"))){
+    releaseScanCode(0x50); // SC_LEFT
+  }
+
+  if (taipoCheckOneshot(side, getTaipoBitmap("RA1"), getTaipoBitmap("0"))) { // PAGEUP
+    pressScanCode(0x4b); // SC_PAGE_UP
+  } else if (!taipoCheckOneshot(!side, getTaipoBitmap("RA1"), getTaipoBitmap("0"))){
+    releaseScanCode(0x4b); // SC_PAGE_UP
+  }
+
+  if (taipoCheckOneshot(side, getTaipoBitmap("SO"), getTaipoBitmap("01"))) { // ALT
+    pressScanCode(0xe2); // SC_L_ALT
+  } else if (!taipoCheckOneshot(!side, getTaipoBitmap("SO"), getTaipoBitmap("01"))){
+    releaseScanCode(0xe2); // SC_L_ALT
+  }
+
+  if (taipoCheckOneshot(side, getTaipoBitmap("SO0"), getTaipoBitmap("1"))) { // DOWN
+    pressScanCode(0x51); // SC_DOWN
+  } else if (!taipoCheckOneshot(!side, getTaipoBitmap("SO0"), getTaipoBitmap("1"))){
+    releaseScanCode(0x51); // SC_DOWN
+  }
+
+  if (taipoCheckOneshot(side, getTaipoBitmap("SO1"), getTaipoBitmap("0"))) { // HOME
+    pressScanCode(0x4a); // SC_HOME
+  } else if (!taipoCheckOneshot(!side, getTaipoBitmap("SO1"), getTaipoBitmap("0"))){
+    releaseScanCode(0x4a); // SC_HOME
+  }
+
+  if (taipoCheckOneshot(side, getTaipoBitmap("NT"), getTaipoBitmap("01"))) { // CTRL
+    pressScanCode(0xe0); // SC_L_CTRL
+  } else if (!taipoCheckOneshot(!side, getTaipoBitmap("NT"), getTaipoBitmap("01"))){
+    releaseScanCode(0xe0); // SC_L_CTRL
+  }
+
+  if (taipoCheckOneshot(side, getTaipoBitmap("NT0"), getTaipoBitmap("1"))) { // UP
+    pressScanCode(0x52); // SC_UP
+  } else if (!taipoCheckOneshot(!side, getTaipoBitmap("NT0"), getTaipoBitmap("1"))){
+    releaseScanCode(0x52); // SC_UP
+  }
+
+  if (taipoCheckOneshot(side, getTaipoBitmap("NT1"), getTaipoBitmap("0"))) { // END
+    pressScanCode(0x4d); // SC_END
+  } else if (!taipoCheckOneshot(!side, getTaipoBitmap("NT1"), getTaipoBitmap("0"))){
+    releaseScanCode(0x4d); // SC_END
+  }
+
+  if (taipoCheckOneshot(side, getTaipoBitmap("IE"), getTaipoBitmap("01"))) { // SHIFT
+    pressScanCode(0xe1); // SC_L_SHIFT
+  } else if (!taipoCheckOneshot(!side, getTaipoBitmap("IE"), getTaipoBitmap("01"))){
+    releaseScanCode(0xe1); // SC_L_SHIFT
+  }
+
+  if (taipoCheckOneshot(side, getTaipoBitmap("IE0"), getTaipoBitmap("1"))) { // RIGHT
+    pressScanCode(0x4f); // SC_RIGHT
+  } else if (!taipoCheckOneshot(!side, getTaipoBitmap("IE0"), getTaipoBitmap("1"))){
+    releaseScanCode(0x4f); // SC_RIGHT
+  }
+
+  if (taipoCheckOneshot(side, getTaipoBitmap("IE1"), getTaipoBitmap("0"))) { // PAGEDOWN
+    pressScanCode(0x4e); // SC_PAGE_DOWN
+  } else if (!taipoCheckOneshot(!side, getTaipoBitmap("IE1"), getTaipoBitmap("0"))){
+    releaseScanCode(0x4e); // SC_PAGE_DOWN
+  }
+}
+
+// Input:
+// 01 = Thumb buttons
+// RSNIAOTE = buttons
+// 01RS // example input
+func getTaipoBitmap(string) var{
+  var i = 0;
+  var bitmap = 0;
+  while (string[i] != 0){
+    if (string[i] == "0"[0]) { // when using an index, it converts the string to decimal, so need to convert other string into decimal too
+      bitmap = bitmap | (1 << 9);
+    } else if (string[i] == "1"[0]) {
+      bitmap = bitmap | (1 << 8);
+    } else if (string[i] == "R"[0]) {
+      bitmap = bitmap | (1 << 7);
+    } else if (string[i] == "S"[0]) {
+      bitmap = bitmap | (1 << 6);
+    } else if (string[i] == "N"[0]) {
+      bitmap = bitmap | (1 << 5);
+    } else if (string[i] == "I"[0]) {
+      bitmap = bitmap | (1 << 4);
+    } else if (string[i] == "A"[0]) {
+      bitmap = bitmap | (1 << 3);
+    } else if (string[i] == "O"[0]) {
+      bitmap = bitmap | (1 << 2);
+    } else if (string[i] == "T"[0]) {
+      bitmap = bitmap | (1 << 1);
+    } else if (string[i] == "E"[0]) {
+      bitmap = bitmap | (1 << 0);
+    }
+
+    i = i+1;
+  }
+  return bitmap;
+}
+
+func init() {
+  const SCRIPT_ID_USER1 = 11;
+  setScript(SCRIPT_ID_USER1, @user1ScriptSetLayer);
+  activate0();
+}
+
+func user1ScriptSetLayer(layerId) {
+  var layerActivate = 0;
+  if (layerId == 0) layerActivate = @activate0;
+  if (layerId == 180924322) layerActivate = @activate1;
+  if (layerActivate == 0) return;
+  deactivateGlobal();
+  deactivateDynamic();
+  layerActivate();
+  activateGlobal();
+}
+
+func onPress0() {
+  dispatchToLayer([[[@onPress0_0, 0]]]);
+}
+func onRelease0() {
+}
+
+func onPress0_0() {
+  deactivateGlobal();
+  deactivate0();
+  activate1();
+  activateGlobal();
+}
+func onRelease0_0() {
+}
+
+func onPress1() {
+  dispatchToLayer([[[@onPress1_0, @onPress1_1]]]);
+}
+func onRelease1() {
+  dispatchToLayer([[[@onRelease1_0, @onRelease1_1]]]);
+}
+
+func onPress1_0() {
+  pressStenoKey(26 /* "#1" */);
+}
+func onRelease1_0() {
+  releaseStenoKey(26 /* "#1" */);
+}
+
+func onPress1_1() {
+  pressTaipoR(0);
+}
+func onRelease1_1() {
+  releaseTaipoR(0);
+}
+
+func onPress2() {
+  dispatchToLayer([[[@onPress2_0, @onPress2_1]]]);
+}
+func onRelease2() {
+  dispatchToLayer([[[@onRelease2_0, @onRelease2_1]]]);
+}
+
+func onPress2_0() {
+  pressStenoKey(2 /* "T-" */);
+}
+func onRelease2_0() {
+  releaseStenoKey(2 /* "T-" */);
+}
+
+func onPress2_1() {
+  pressTaipoS(0);
+}
+func onRelease2_1() {
+  releaseTaipoS(0);
+}
+
+func onPress3() {
+  dispatchToLayer([[[@onPress3_0, @onPress3_1]]]);
+}
+func onRelease3() {
+  dispatchToLayer([[[@onRelease3_0, @onRelease3_1]]]);
+}
+
+func onPress3_0() {
+  pressStenoKey(4 /* "P-" */);
+}
+func onRelease3_0() {
+  releaseStenoKey(4 /* "P-" */);
+}
+
+func onPress3_1() {
+  pressTaipoN(0);
+}
+func onRelease3_1() {
+  releaseTaipoN(0);
+}
+
+func onPress4() {
+  dispatchToLayer([[[@onPress4_0, @onPress4_1]]]);
+}
+func onRelease4() {
+  dispatchToLayer([[[@onRelease4_0, @onRelease4_1]]]);
+}
+
+func onPress4_0() {
+  pressStenoKey(6 /* "H-" */);
+}
+func onRelease4_0() {
+  releaseStenoKey(6 /* "H-" */);
+}
+
+func onPress4_1() {
+  pressTaipoI(0);
+}
+func onRelease4_1() {
+  releaseTaipoI(0);
+}
+
+func onPress5() {
+  dispatchToLayer([[[@onPress5_0, 0]]]);
+}
+func onRelease5() {
+  dispatchToLayer([[[@onRelease5_0, 0]]]);
+}
+
+func onPress5_0() {
+  pressStenoKey(10 /* "*1" */);
+}
+func onRelease5_0() {
+  releaseStenoKey(10 /* "*1" */);
+}
+
+func onPress6() {
+  dispatchToLayer([[[@onPress6_0, 0]]]);
+}
+func onRelease6() {
+  dispatchToLayer([[[@onRelease6_0, 0]]]);
+}
+
+func onPress6_0() {
+  pressStenoKey(11 /* "*2" */);
+}
+func onRelease6_0() {
+  releaseStenoKey(11 /* "*2" */);
+}
+
+func onPress7() {
+  dispatchToLayer([[[@onPress7_0, @onPress7_1]]]);
+}
+func onRelease7() {
+  dispatchToLayer([[[@onRelease7_0, @onRelease7_1]]]);
+}
+
+func onPress7_0() {
+  pressStenoKey(16 /* "-F" */);
+}
+func onRelease7_0() {
+  releaseStenoKey(16 /* "-F" */);
+}
+
+func onPress7_1() {
+  pressTaipoI(1);
+}
+func onRelease7_1() {
+  releaseTaipoI(1);
+}
+
+func onPress8() {
+  dispatchToLayer([[[@onPress8_0, @onPress8_1]]]);
+}
+func onRelease8() {
+  dispatchToLayer([[[@onRelease8_0, @onRelease8_1]]]);
+}
+
+func onPress8_0() {
+  pressStenoKey(18 /* "-P" */);
+}
+func onRelease8_0() {
+  releaseStenoKey(18 /* "-P" */);
+}
+
+func onPress8_1() {
+  pressTaipoN(1);
+}
+func onRelease8_1() {
+  releaseTaipoN(1);
+}
+
+func onPress9() {
+  dispatchToLayer([[[@onPress9_0, @onPress9_1]]]);
+}
+func onRelease9() {
+  dispatchToLayer([[[@onRelease9_0, @onRelease9_1]]]);
+}
+
+func onPress9_0() {
+  pressStenoKey(20 /* "-L" */);
+}
+func onRelease9_0() {
+  releaseStenoKey(20 /* "-L" */);
+}
+
+func onPress9_1() {
+  pressTaipoS(1);
+}
+func onRelease9_1() {
+  releaseTaipoS(1);
+}
+
+func onPress10() {
+  dispatchToLayer([[[@onPress10_0, @onPress10_1]]]);
+}
+func onRelease10() {
+  dispatchToLayer([[[@onRelease10_0, @onRelease10_1]]]);
+}
+
+func onPress10_0() {
+  pressStenoKey(22 /* "-T" */);
+}
+func onRelease10_0() {
+  releaseStenoKey(22 /* "-T" */);
+}
+
+func onPress10_1() {
+  pressTaipoR(1);
+}
+func onRelease10_1() {
+  releaseTaipoR(1);
+}
+
+func onPress11() {
+  dispatchToLayer([[[@onPress11_0, 0]]]);
+}
+func onRelease11() {
+  dispatchToLayer([[[@onRelease11_0, 0]]]);
+}
+
+func onPress11_0() {
+  pressStenoKey(24 /* "-D" */);
+}
+func onRelease11_0() {
+  releaseStenoKey(24 /* "-D" */);
+}
+
+func onPress12() {
+  dispatchToLayer([[[@onPress12_0, @onPress12_1]]]);
+}
+func onRelease12() {
+}
+
+func onPress12_0() {
+  deactivateGlobal();
+  deactivate0();
+  activate0();
+  activateGlobal();
+}
+func onRelease12_0() {
+}
+
+func onPress12_1() {
+  deactivateGlobal();
+  deactivate1();
+  activate0();
+  activateGlobal();
+}
+func onRelease12_1() {
+}
+
+func onPress13() {
+  dispatchToLayer([[[@onPress13_0, @onPress13_1]]]);
+}
+func onRelease13() {
+  dispatchToLayer([[[@onRelease13_0, @onRelease13_1]]]);
+}
+
+func onPress13_0() {
+  pressStenoKey(1 /* "S2" */);
+}
+func onRelease13_0() {
+  releaseStenoKey(1 /* "S2" */);
+}
+
+func onPress13_1() {
+  pressTaipoA(0);
+}
+func onRelease13_1() {
+  releaseTaipoA(0);
+}
+
+func onPress14() {
+  dispatchToLayer([[[@onPress14_0, @onPress14_1]]]);
+}
+func onRelease14() {
+  dispatchToLayer([[[@onRelease14_0, @onRelease14_1]]]);
+}
+
+func onPress14_0() {
+  pressStenoKey(3 /* "K-" */);
+}
+func onRelease14_0() {
+  releaseStenoKey(3 /* "K-" */);
+}
+
+func onPress14_1() {
+  pressTaipoO(0);
+}
+func onRelease14_1() {
+  releaseTaipoO(0);
+}
+
+func onPress15() {
+  dispatchToLayer([[[@onPress15_0, @onPress15_1]]]);
+}
+func onRelease15() {
+  dispatchToLayer([[[@onRelease15_0, @onRelease15_1]]]);
+}
+
+func onPress15_0() {
+  pressStenoKey(5 /* "W-" */);
+}
+func onRelease15_0() {
+  releaseStenoKey(5 /* "W-" */);
+}
+
+func onPress15_1() {
+  pressTaipoT(0);
+}
+func onRelease15_1() {
+  releaseTaipoT(0);
+}
+
+func onPress16() {
+  dispatchToLayer([[[@onPress16_0, @onPress16_1]]]);
+}
+func onRelease16() {
+  dispatchToLayer([[[@onRelease16_0, @onRelease16_1]]]);
+}
+
+func onPress16_0() {
+  pressStenoKey(7 /* "R-" */);
+}
+func onRelease16_0() {
+  releaseStenoKey(7 /* "R-" */);
+}
+
+func onPress16_1() {
+  pressTaipoE(0);
+}
+func onRelease16_1() {
+  releaseTaipoE(0);
+}
+
+func onPress17() {
+  dispatchToLayer([[[@onPress17_0, @onPress17_1]]]);
+}
+func onRelease17() {
+  dispatchToLayer([[[@onRelease17_0, @onRelease17_1]]]);
+}
+
+func onPress17_0() {
+  pressStenoKey(17 /* "-R" */);
+}
+func onRelease17_0() {
+  releaseStenoKey(17 /* "-R" */);
+}
+
+func onPress17_1() {
+  pressTaipoE(1);
+}
+func onRelease17_1() {
+  releaseTaipoE(1);
+}
+
+func onPress18() {
+  dispatchToLayer([[[@onPress18_0, @onPress18_1]]]);
+}
+func onRelease18() {
+  dispatchToLayer([[[@onRelease18_0, @onRelease18_1]]]);
+}
+
+func onPress18_0() {
+  pressStenoKey(19 /* "-B" */);
+}
+func onRelease18_0() {
+  releaseStenoKey(19 /* "-B" */);
+}
+
+func onPress18_1() {
+  pressTaipoT(1);
+}
+func onRelease18_1() {
+  releaseTaipoT(1);
+}
+
+func onPress19() {
+  dispatchToLayer([[[@onPress19_0, @onPress19_1]]]);
+}
+func onRelease19() {
+  dispatchToLayer([[[@onRelease19_0, @onRelease19_1]]]);
+}
+
+func onPress19_0() {
+  pressStenoKey(21 /* "-G" */);
+}
+func onRelease19_0() {
+  releaseStenoKey(21 /* "-G" */);
+}
+
+func onPress19_1() {
+  pressTaipoO(1);
+}
+func onRelease19_1() {
+  releaseTaipoO(1);
+}
+
+func onPress20() {
+  dispatchToLayer([[[@onPress20_0, @onPress20_1]]]);
+}
+func onRelease20() {
+  dispatchToLayer([[[@onRelease20_0, @onRelease20_1]]]);
+}
+
+func onPress20_0() {
+  pressStenoKey(23 /* "-S" */);
+}
+func onRelease20_0() {
+  releaseStenoKey(23 /* "-S" */);
+}
+
+func onPress20_1() {
+  pressTaipoA(1);
+}
+func onRelease20_1() {
+  releaseTaipoA(1);
+}
+
+func onPress21() {
+  dispatchToLayer([[[@onPress21_0, 0]]]);
+}
+func onRelease21() {
+  dispatchToLayer([[[@onRelease21_0, 0]]]);
+}
+
+func onPress21_0() {
+  pressStenoKey(25 /* "-Z" */);
+}
+func onRelease21_0() {
+  releaseStenoKey(25 /* "-Z" */);
+}
+
+func onPress22() {
+  dispatchToLayer([[[@onPress22_0, @onPress22_1]]]);
+}
+func onRelease22() {
+  dispatchToLayer([[[@onRelease22_0, @onRelease22_1]]]);
+}
+
+func onPress22_0() {
+  pressStenoKey(8 /* "A" */);
+}
+func onRelease22_0() {
+  releaseStenoKey(8 /* "A" */);
+}
+
+func onPress22_1() {
+  pressTaipoInner(0);
+}
+func onRelease22_1() {
+  releaseTaipoInner(0);
+}
+
+func onPress23() {
+  dispatchToLayer([[[@onPress23_0, @onPress23_1]]]);
+}
+func onRelease23() {
+  dispatchToLayer([[[@onRelease23_0, @onRelease23_1]]]);
+}
+
+func onPress23_0() {
+  pressStenoKey(9 /* "O" */);
+}
+func onRelease23_0() {
+  releaseStenoKey(9 /* "O" */);
+}
+
+func onPress23_1() {
+  pressTaipoOuter(0);
+}
+func onRelease23_1() {
+  releaseTaipoOuter(0);
+}
+
+func onPress24() {
+  dispatchToLayer([[[@onPress24_0, @onPress24_1]]]);
+}
+func onRelease24() {
+  dispatchToLayer([[[@onRelease24_0, @onRelease24_1]]]);
+}
+
+func onPress24_0() {
+  pressStenoKey(14 /* "E" */);
+}
+func onRelease24_0() {
+  releaseStenoKey(14 /* "E" */);
+}
+
+func onPress24_1() {
+  pressTaipoOuter(1);
+}
+func onRelease24_1() {
+  releaseTaipoOuter(1);
+}
+
+func onPress25() {
+  dispatchToLayer([[[@onPress25_0, @onPress25_1]]]);
+}
+func onRelease25() {
+  dispatchToLayer([[[@onRelease25_0, @onRelease25_1]]]);
+}
+
+func onPress25_0() {
+  pressStenoKey(15 /* "U" */);
+}
+func onRelease25_0() {
+  releaseStenoKey(15 /* "U" */);
+}
+
+func onPress25_1() {
+  pressTaipoInner(1);
+}
+func onRelease25_1() {
+  releaseTaipoInner(1);
+}
+
+func onPress26() {
+  dispatchToLayer([[[@onPress26_0, 0]]]);
+}
+func onRelease26() {
+}
+
+const SCRIPT_ID_STENO_MODE_UPDATE = 9;
+
+func init() {
+  setRgb(0, 0, 1, 0);
+  setScript(SCRIPT_ID_STENO_MODE_UPDATE, @onStenoModeUpdate);
+}
+
+func onStenoModeUpdate() {
+  var stenoMode = getParameter("steno_mode");
+  if (stenoMode == "embedded") {
+    setRgb(0, 0, 1, 0);
+  } else if (stenoMode == "gemini") {
+    setRgb(0, 1, 0, 0);
+  } else if (stenoMode == "tx_bolt") {
+    setRgb(0, 0, 0, 1);
+  } else if (stenoMode == "procat") {
+    setRgb(0, 1, 1, 0);
+  } else if (stenoMode == "plover_hid") {
+    setRgb(0, 0, 1, 1);
+  }
+}
+func onPress26_0() {
+  if (getParameter("steno_mode") != "embedded") {
+    console("set_steno_mode embedded");
+    setRgb(0, 0, 1, 0);
+  } else {
+    console("set_steno_mode gemini");
+    setRgb(0, 1, 0, 0);
+  }
+  releaseAll();
+
+}
+func onRelease26_0() {
+
+}
+
+func onPress27() {
+  dispatchToLayer([[[@onPress27_0, 0]]]);
+}
+func onRelease27() {
+}
+
+func onPress27_0() {
+  console("launch_bootloader");
+}
+func onRelease27_0() {
+}
+

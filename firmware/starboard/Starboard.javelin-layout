@@ -1,0 +1,1019 @@
+{
+	"layers": [
+		{
+			"id": 0,
+			"name": "Default",
+			"keys": [
+				[
+					{
+						"t": "p",
+						"d": {
+							"a": {
+								"t": "l",
+								"l": 180924322
+							}
+						}
+					}
+				],
+				[
+					{
+						"t": "p",
+						"d": {
+							"a": {
+								"t": "p",
+								"c": "stenoNum1"
+							}
+						}
+					},
+					{
+						"t": "r",
+						"d": {
+							"a": {
+								"t": "r",
+								"c": "stenoNum1"
+							}
+						}
+					}
+				],
+				[
+					{
+						"t": "p",
+						"d": {
+							"a": {
+								"t": "p",
+								"c": "stenoTL"
+							}
+						}
+					},
+					{
+						"t": "r",
+						"d": {
+							"a": {
+								"t": "r",
+								"c": "stenoTL"
+							}
+						}
+					}
+				],
+				[
+					{
+						"t": "p",
+						"d": {
+							"a": {
+								"t": "p",
+								"c": "stenoPL"
+							}
+						}
+					},
+					{
+						"t": "r",
+						"d": {
+							"a": {
+								"t": "r",
+								"c": "stenoPL"
+							}
+						}
+					}
+				],
+				[
+					{
+						"t": "p",
+						"d": {
+							"a": {
+								"t": "p",
+								"c": "stenoHL"
+							}
+						}
+					},
+					{
+						"t": "r",
+						"d": {
+							"a": {
+								"t": "r",
+								"c": "stenoHL"
+							}
+						}
+					}
+				],
+				[
+					{
+						"t": "p",
+						"d": {
+							"a": {
+								"t": "p",
+								"c": "stenoStar1"
+							}
+						}
+					},
+					{
+						"t": "r",
+						"d": {
+							"a": {
+								"t": "r",
+								"c": "stenoStar1"
+							}
+						}
+					}
+				],
+				[
+					{
+						"t": "p",
+						"d": {
+							"a": {
+								"t": "p",
+								"c": "stenoStar2"
+							}
+						}
+					},
+					{
+						"t": "r",
+						"d": {
+							"a": {
+								"t": "r",
+								"c": "stenoStar2"
+							}
+						}
+					}
+				],
+				[
+					{
+						"t": "p",
+						"d": {
+							"a": {
+								"t": "p",
+								"c": "stenoFR"
+							}
+						}
+					},
+					{
+						"t": "r",
+						"d": {
+							"a": {
+								"t": "r",
+								"c": "stenoFR"
+							}
+						}
+					}
+				],
+				[
+					{
+						"t": "p",
+						"d": {
+							"a": {
+								"t": "p",
+								"c": "stenoPR"
+							}
+						}
+					},
+					{
+						"t": "r",
+						"d": {
+							"a": {
+								"t": "r",
+								"c": "stenoPR"
+							}
+						}
+					}
+				],
+				[
+					{
+						"t": "p",
+						"d": {
+							"a": {
+								"t": "p",
+								"c": "stenoLR"
+							}
+						}
+					},
+					{
+						"t": "r",
+						"d": {
+							"a": {
+								"t": "r",
+								"c": "stenoLR"
+							}
+						}
+					}
+				],
+				[
+					{
+						"t": "p",
+						"d": {
+							"a": {
+								"t": "p",
+								"c": "stenoTR"
+							}
+						}
+					},
+					{
+						"t": "r",
+						"d": {
+							"a": {
+								"t": "r",
+								"c": "stenoTR"
+							}
+						}
+					}
+				],
+				[
+					{
+						"t": "p",
+						"d": {
+							"a": {
+								"t": "p",
+								"c": "stenoDR"
+							}
+						}
+					},
+					{
+						"t": "r",
+						"d": {
+							"a": {
+								"t": "r",
+								"c": "stenoDR"
+							}
+						}
+					}
+				],
+				[
+					{
+						"t": "p",
+						"d": {
+							"a": {
+								"t": "l",
+								"l": 0
+							}
+						}
+					}
+				],
+				[
+					{
+						"t": "p",
+						"d": {
+							"a": {
+								"t": "p",
+								"c": "stenoS2"
+							}
+						}
+					},
+					{
+						"t": "r",
+						"d": {
+							"a": {
+								"t": "r",
+								"c": "stenoS2"
+							}
+						}
+					}
+				],
+				[
+					{
+						"t": "p",
+						"d": {
+							"a": {
+								"t": "p",
+								"c": "stenoKL"
+							}
+						}
+					},
+					{
+						"t": "r",
+						"d": {
+							"a": {
+								"t": "r",
+								"c": "stenoKL"
+							}
+						}
+					}
+				],
+				[
+					{
+						"t": "p",
+						"d": {
+							"a": {
+								"t": "p",
+								"c": "stenoWL"
+							}
+						}
+					},
+					{
+						"t": "r",
+						"d": {
+							"a": {
+								"t": "r",
+								"c": "stenoWL"
+							}
+						}
+					}
+				],
+				[
+					{
+						"t": "p",
+						"d": {
+							"a": {
+								"t": "p",
+								"c": "stenoRL"
+							}
+						}
+					},
+					{
+						"t": "r",
+						"d": {
+							"a": {
+								"t": "r",
+								"c": "stenoRL"
+							}
+						}
+					}
+				],
+				[
+					{
+						"t": "p",
+						"d": {
+							"a": {
+								"t": "p",
+								"c": "stenoRR"
+							}
+						}
+					},
+					{
+						"t": "r",
+						"d": {
+							"a": {
+								"t": "r",
+								"c": "stenoRR"
+							}
+						}
+					}
+				],
+				[
+					{
+						"t": "p",
+						"d": {
+							"a": {
+								"t": "p",
+								"c": "stenoBR"
+							}
+						}
+					},
+					{
+						"t": "r",
+						"d": {
+							"a": {
+								"t": "r",
+								"c": "stenoBR"
+							}
+						}
+					}
+				],
+				[
+					{
+						"t": "p",
+						"d": {
+							"a": {
+								"t": "p",
+								"c": "stenoGR"
+							}
+						}
+					},
+					{
+						"t": "r",
+						"d": {
+							"a": {
+								"t": "r",
+								"c": "stenoGR"
+							}
+						}
+					}
+				],
+				[
+					{
+						"t": "p",
+						"d": {
+							"a": {
+								"t": "p",
+								"c": "stenoSR"
+							}
+						}
+					},
+					{
+						"t": "r",
+						"d": {
+							"a": {
+								"t": "r",
+								"c": "stenoSR"
+							}
+						}
+					}
+				],
+				[
+					{
+						"t": "p",
+						"d": {
+							"a": {
+								"t": "p",
+								"c": "stenoZR"
+							}
+						}
+					},
+					{
+						"t": "r",
+						"d": {
+							"a": {
+								"t": "r",
+								"c": "stenoZR"
+							}
+						}
+					}
+				],
+				[
+					{
+						"t": "p",
+						"d": {
+							"a": {
+								"t": "p",
+								"c": "stenoA"
+							}
+						}
+					},
+					{
+						"t": "r",
+						"d": {
+							"a": {
+								"t": "r",
+								"c": "stenoA"
+							}
+						}
+					}
+				],
+				[
+					{
+						"t": "p",
+						"d": {
+							"a": {
+								"t": "p",
+								"c": "stenoO"
+							}
+						}
+					},
+					{
+						"t": "r",
+						"d": {
+							"a": {
+								"t": "r",
+								"c": "stenoO"
+							}
+						}
+					}
+				],
+				[
+					{
+						"t": "p",
+						"d": {
+							"a": {
+								"t": "p",
+								"c": "stenoE"
+							}
+						}
+					},
+					{
+						"t": "r",
+						"d": {
+							"a": {
+								"t": "r",
+								"c": "stenoE"
+							}
+						}
+					}
+				],
+				[
+					{
+						"t": "p",
+						"d": {
+							"a": {
+								"t": "p",
+								"c": "stenoU"
+							}
+						}
+					},
+					{
+						"t": "r",
+						"d": {
+							"a": {
+								"t": "r",
+								"c": "stenoU"
+							}
+						}
+					}
+				],
+				[
+					{
+						"t": "p",
+						"d": {
+							"a": {
+								"t": "s",
+								"script": "if (getParameter(\"steno_mode\") != \"embedded\") {\n  console(\"set_steno_mode embedded\");\n  setRgb(0, 0, 1, 0);\n} else {\n  console(\"set_steno_mode gemini\");\n  setRgb(0, 1, 0, 0);\n}\nreleaseAll();"
+							}
+						}
+					},
+					{
+						"t": "s",
+						"d": {
+							"s": "const SCRIPT_ID_STENO_MODE_UPDATE = 9;\n\nfunc init() {\n  setRgb(0, 0, 1, 0);\n  setScript(SCRIPT_ID_STENO_MODE_UPDATE, @onStenoModeUpdate);\n}\n\nfunc onStenoModeUpdate() {\n  var stenoMode = getParameter(\"steno_mode\");\n  if (stenoMode == \"embedded\") {\n    setRgb(0, 0, 1, 0);\n  } else if (stenoMode == \"gemini\") {\n    setRgb(0, 1, 0, 0);\n  } else if (stenoMode == \"tx_bolt\") {\n    setRgb(0, 0, 0, 1);\n  } else if (stenoMode == \"procat\") {\n    setRgb(0, 1, 1, 0);\n  } else if (stenoMode == \"plover_hid\") {\n    setRgb(0, 0, 1, 1);\n  }\n}",
+							"q": "",
+							"p": "",
+							"t": "",
+							"r": ""
+						}
+					}
+				],
+				[
+					{
+						"t": "p",
+						"d": {
+							"a": {
+								"t": "c",
+								"c": "launch_bootloader"
+							}
+						}
+					}
+				]
+			],
+			"scripts": {},
+			"user_scripts": {},
+			"options": {},
+			"sequences": {}
+		},
+		{
+			"id": 180924322,
+			"name": "Taipo",
+			"keys": [
+				[],
+				[
+					{
+						"t": "p",
+						"d": {
+							"a": {
+								"t": "s",
+								"script": "pressTaipoR(0);"
+							}
+						}
+					},
+					{
+						"t": "r",
+						"d": {
+							"a": {
+								"t": "s",
+								"script": "releaseTaipoR(0);"
+							}
+						}
+					}
+				],
+				[
+					{
+						"t": "p",
+						"d": {
+							"a": {
+								"t": "s",
+								"script": "pressTaipoS(0);"
+							}
+						}
+					},
+					{
+						"t": "r",
+						"d": {
+							"a": {
+								"t": "s",
+								"script": "releaseTaipoS(0);"
+							}
+						}
+					}
+				],
+				[
+					{
+						"t": "p",
+						"d": {
+							"a": {
+								"t": "s",
+								"script": "pressTaipoN(0);"
+							}
+						}
+					},
+					{
+						"t": "r",
+						"d": {
+							"a": {
+								"t": "s",
+								"script": "releaseTaipoN(0);"
+							}
+						}
+					}
+				],
+				[
+					{
+						"t": "p",
+						"d": {
+							"a": {
+								"t": "s",
+								"script": "pressTaipoI(0);"
+							}
+						}
+					},
+					{
+						"t": "r",
+						"d": {
+							"a": {
+								"t": "s",
+								"script": "releaseTaipoI(0);"
+							}
+						}
+					}
+				],
+				null,
+				null,
+				[
+					{
+						"t": "p",
+						"d": {
+							"a": {
+								"t": "s",
+								"script": "pressTaipoI(1);"
+							}
+						}
+					},
+					{
+						"t": "r",
+						"d": {
+							"a": {
+								"t": "s",
+								"script": "releaseTaipoI(1);"
+							}
+						}
+					}
+				],
+				[
+					{
+						"t": "p",
+						"d": {
+							"a": {
+								"t": "s",
+								"script": "pressTaipoN(1);"
+							}
+						}
+					},
+					{
+						"t": "r",
+						"d": {
+							"a": {
+								"t": "s",
+								"script": "releaseTaipoN(1);"
+							}
+						}
+					}
+				],
+				[
+					{
+						"t": "p",
+						"d": {
+							"a": {
+								"t": "s",
+								"script": "pressTaipoS(1);"
+							}
+						}
+					},
+					{
+						"t": "r",
+						"d": {
+							"a": {
+								"t": "s",
+								"script": "releaseTaipoS(1);"
+							}
+						}
+					}
+				],
+				[
+					{
+						"t": "r",
+						"d": {
+							"a": {
+								"t": "s",
+								"script": "releaseTaipoR(1);"
+							}
+						}
+					},
+					{
+						"t": "p",
+						"d": {
+							"a": {
+								"t": "s",
+								"script": "pressTaipoR(1);"
+							}
+						}
+					}
+				],
+				null,
+				[
+					{
+						"t": "p",
+						"d": {
+							"a": {
+								"t": "l",
+								"l": 0
+							}
+						}
+					}
+				],
+				[
+					{
+						"t": "p",
+						"d": {
+							"a": {
+								"t": "s",
+								"script": "pressTaipoA(0);"
+							}
+						}
+					},
+					{
+						"t": "r",
+						"d": {
+							"a": {
+								"t": "s",
+								"script": "releaseTaipoA(0);"
+							}
+						}
+					}
+				],
+				[
+					{
+						"t": "p",
+						"d": {
+							"a": {
+								"t": "s",
+								"script": "pressTaipoO(0);"
+							}
+						}
+					},
+					{
+						"t": "r",
+						"d": {
+							"a": {
+								"t": "s",
+								"script": "releaseTaipoO(0);"
+							}
+						}
+					}
+				],
+				[
+					{
+						"t": "p",
+						"d": {
+							"a": {
+								"t": "s",
+								"script": "pressTaipoT(0);"
+							}
+						}
+					},
+					{
+						"t": "r",
+						"d": {
+							"a": {
+								"t": "s",
+								"script": "releaseTaipoT(0);"
+							}
+						}
+					}
+				],
+				[
+					{
+						"t": "p",
+						"d": {
+							"a": {
+								"t": "s",
+								"script": "pressTaipoE(0);"
+							}
+						}
+					},
+					{
+						"t": "r",
+						"d": {
+							"a": {
+								"t": "s",
+								"script": "releaseTaipoE(0);"
+							}
+						}
+					}
+				],
+				[
+					{
+						"t": "p",
+						"d": {
+							"a": {
+								"t": "s",
+								"script": "pressTaipoE(1);"
+							}
+						}
+					},
+					{
+						"t": "r",
+						"d": {
+							"a": {
+								"t": "s",
+								"script": "releaseTaipoE(1);"
+							}
+						}
+					}
+				],
+				[
+					{
+						"t": "p",
+						"d": {
+							"a": {
+								"t": "s",
+								"script": "pressTaipoT(1);"
+							}
+						}
+					},
+					{
+						"t": "r",
+						"d": {
+							"a": {
+								"t": "s",
+								"script": "releaseTaipoT(1);"
+							}
+						}
+					}
+				],
+				[
+					{
+						"t": "p",
+						"d": {
+							"a": {
+								"t": "s",
+								"script": "pressTaipoO(1);"
+							}
+						}
+					},
+					{
+						"t": "r",
+						"d": {
+							"a": {
+								"t": "s",
+								"script": "releaseTaipoO(1);"
+							}
+						}
+					}
+				],
+				[
+					{
+						"t": "p",
+						"d": {
+							"a": {
+								"t": "s",
+								"script": "pressTaipoA(1);"
+							}
+						}
+					},
+					{
+						"t": "r",
+						"d": {
+							"a": {
+								"t": "s",
+								"script": "releaseTaipoA(1);"
+							}
+						}
+					}
+				],
+				null,
+				[
+					{
+						"t": "p",
+						"d": {
+							"a": {
+								"t": "s",
+								"script": "pressTaipoInner(0);"
+							}
+						}
+					},
+					{
+						"t": "r",
+						"d": {
+							"a": {
+								"t": "s",
+								"script": "releaseTaipoInner(0);"
+							}
+						}
+					}
+				],
+				[
+					{
+						"t": "p",
+						"d": {
+							"a": {
+								"t": "s",
+								"script": "pressTaipoOuter(0);"
+							}
+						}
+					},
+					{
+						"t": "r",
+						"d": {
+							"a": {
+								"t": "s",
+								"script": "releaseTaipoOuter(0);"
+							}
+						}
+					}
+				],
+				[
+					{
+						"t": "p",
+						"d": {
+							"a": {
+								"t": "s",
+								"script": "pressTaipoOuter(1);"
+							}
+						}
+					},
+					{
+						"t": "r",
+						"d": {
+							"a": {
+								"t": "s",
+								"script": "releaseTaipoOuter(1);"
+							}
+						}
+					}
+				],
+				[
+					{
+						"t": "p",
+						"d": {
+							"a": {
+								"t": "s",
+								"script": "pressTaipoInner(1);"
+							}
+						}
+					},
+					{
+						"t": "r",
+						"d": {
+							"a": {
+								"t": "s",
+								"script": "releaseTaipoInner(1);"
+							}
+						}
+					}
+				],
+				null,
+				null
+			],
+			"scripts": {},
+			"user_scripts": {
+				"taipo": "//https://inkeys.wiki/en/keymaps/taipo\nconst ONESHOT_TIMEOUT = 100;\nconst TAIPO_TIMEOUT = 50; // after this timeout, the keys are considered sent. Set to -1 to change this to on release\n\n// Usage pressTaipoX(0) //0 = left, 1 = right\n\n// Binary of pressed keys\n// Order:\n// InnerOuter RSNI AOTE\nvar taipoKeysPressedR = 0x0;\nvar taipoKeysCurrentlyPressedR = 0x0; // Keys that are currently being held down, used to check if any keys are being held down\n\nvar taipoKeysPressedL = 0x0;\nvar taipoKeysCurrentlyPressedL = 0x0; // Keys that are currently being held down, used to check if any keys are being held down\n\nfunc pressTaipoBitMask(side, bitmask) { \n  if (side == 0) {\n    taipoKeysPressedL = taipoKeysPressedL | bitmask; // Set bit\n    taipoKeysCurrentlyPressedL = taipoKeysCurrentlyPressedL | bitmask;\n  } else {\n    taipoKeysPressedR = taipoKeysPressedR | bitmask; // Set bit\n    taipoKeysCurrentlyPressedR = taipoKeysCurrentlyPressedR | bitmask;\n  }\n  taipoLayerPress(side);\n}\n\nfunc releaseTaipoBitMask(side, bitmask) { \n  if (side == 0) {\n    taipoKeysCurrentlyPressedL = taipoKeysCurrentlyPressedL & ~bitmask; // Clear bit\n  } else {\n    taipoKeysCurrentlyPressedR = taipoKeysCurrentlyPressedR & ~bitmask; // Clear bit\n  }\n  taipoLayerRelease(side);\n}\n\n// RSNI\nfunc pressTaipoInner(side) {\n  pressTaipoBitMask(side, (1 << 9));\n}\n\nfunc releaseTaipoInner(side) {\n  releaseTaipoBitMask(side, (1 << 9)); // Clear bit position 9 (Inner)\n}\n\n\nfunc pressTaipoOuter(side) {\n  pressTaipoBitMask(side, (1 << 8)); // Bit position 8 (Outer)\n}\n\nfunc releaseTaipoOuter(side) {\n  releaseTaipoBitMask(side, (1 << 8)); // Clear bit position 9 (Outer)\n}\n\n\nfunc pressTaipoR(side) {\n  pressTaipoBitMask(side, (1 << 7)); // Bit position 7 (R)\n}\n\nfunc releaseTaipoR(side) {\n  releaseTaipoBitMask(side, (1 << 7)); // Clear bit position 7 (R)\n}\n\nfunc pressTaipoS(side) {\n  pressTaipoBitMask(side, (1 << 6)); // Bit position 6 (S)\n}\n\nfunc releaseTaipoS(side) {\n  releaseTaipoBitMask(side, (1 << 6)); // Clear bit position 6 (S)\n}\n\nfunc pressTaipoN(side) {\n  pressTaipoBitMask(side, (1 << 5)); // Bit position 5 (N)\n}\n\nfunc releaseTaipoN(side) {\n  releaseTaipoBitMask(side, (1 << 5)); // Clear bit position 5 (N)\n}\n\nfunc pressTaipoI(side) {\n  pressTaipoBitMask(side, (1 << 4)); // Bit position 4 (I)\n}\n\nfunc releaseTaipoI(side) {\n  releaseTaipoBitMask(side, (1 << 4)); // Clear bit position 4 (I)\n}\n\n// AOTE\n\nfunc pressTaipoA(side) {\n  pressTaipoBitMask(side, (1 << 3)); // Bit position 3 (A)\n}\n\nfunc releaseTaipoA(side) {\n  releaseTaipoBitMask(side, (1 << 3)); // Clear bit position 3 (A)\n}\n\nfunc pressTaipoO(side) {\n  pressTaipoBitMask(side, (1 << 2)); // Bit position 2 (O)\n}\n\nfunc releaseTaipoO(side) {\n  releaseTaipoBitMask(side, (1 << 2)); // Clear bit position 2 (O)\n}\n\nfunc pressTaipoT(side) {\n  pressTaipoBitMask(side, (1 << 1)); // Bit position 1 (T)\n}\n\nfunc releaseTaipoT(side) {\n  releaseTaipoBitMask(side, (1 << 1)); // Clear bit position 1 (T)\n}\n\nfunc pressTaipoE(side) {\n  pressTaipoBitMask(side, (1 << 0)); // Bit position 0 (E)\n}\n\nfunc releaseTaipoE(side) {\n  releaseTaipoBitMask(side, (1 << 0)); // Clear bit position 0 (E)\n}\n\n// runs when a key is released\nfunc taipoLayerRelease(side) {\n  var taipoKeysPressed;\n  var taipoKeysCurrentlyPressed;\n\n  if (side == 0) {\n    taipoKeysPressed = taipoKeysPressedL;\n    taipoKeysCurrentlyPressed = taipoKeysCurrentlyPressedL;\n  } else {\n    taipoKeysPressed = taipoKeysPressedR;\n    taipoKeysCurrentlyPressed = taipoKeysCurrentlyPressedR;\n  }\n\n  taipoOneshotUpdate(side);\n  if (TAIPO_TIMEOUT == -1) {\n    // Only trigger key update when no keys pressed(key release)\n    if (taipoKeysCurrentlyPressed != 0) {return;}\n    taipoKeysUpdate(side);\n  }\n}\n\nfunc taipoLayerPress(side) {\n  if (side == 0) {\n    stopTimer(49173);\n    startTimer(49173 /* random number */, ONESHOT_TIMEOUT, 0 /* is repeating */, @ { taipoOneshotUpdate(0); });\n  } else { // side = 1\n    stopTimer(64673);\n    startTimer(64673 /* random number */, ONESHOT_TIMEOUT, 0 /* is repeating */, @ { taipoOneshotUpdate(1); });\n  }\n\n  if (TAIPO_TIMEOUT != -1) {\n    // trigger after timeout\n    if (side == 0) {\n      stopTimer(07532);\n      startTimer(07532 /* random number */, TAIPO_TIMEOUT, 0 /* is repeating */, @ { taipoKeysUpdate(0); });\n    } else { // side = 1\n      stopTimer(24584);\n      startTimer(24584 /* random number */, TAIPO_TIMEOUT, 0 /* is repeating */, @ { taipoKeysUpdate(1); });\n    }\n  }\n}\n\n// Presses keys on trigger\nfunc taipoKeysUpdate(side) {\n  var taipoKeysPressed;\n  var taipoKeysCurrentlyPressed;\n\n  if (side == 0) {\n    taipoKeysPressed = taipoKeysPressedL;\n    taipoKeysCurrentlyPressed = taipoKeysCurrentlyPressedL;\n  } else {\n    taipoKeysPressed = taipoKeysPressedR;\n    taipoKeysCurrentlyPressed = taipoKeysCurrentlyPressedR;\n  }\n\n  printValue(\"taipoKeysCurrentlyPressed\", taipoKeysCurrentlyPressed);\n\n  if (taipoKeysPressed == getTaipoBitmap(\"R\")) sendText(\"r\");\n  if (taipoKeysPressed == getTaipoBitmap(\"S\")) sendText(\"s\");\n  if (taipoKeysPressed == getTaipoBitmap(\"N\")) sendText(\"n\");\n  if (taipoKeysPressed == getTaipoBitmap(\"I\")) sendText(\"i\");\n  if (taipoKeysPressed == getTaipoBitmap(\"A\")) sendText(\"a\");\n  if (taipoKeysPressed == getTaipoBitmap(\"O\")) sendText(\"o\");\n  if (taipoKeysPressed == getTaipoBitmap(\"T\")) sendText(\"t\");\n  if (taipoKeysPressed == getTaipoBitmap(\"E\")) sendText(\"e\");\n  if (taipoKeysPressed == getTaipoBitmap(\"OE\")) sendText(\"c\");\n  if (taipoKeysPressed == getTaipoBitmap(\"OT\")) sendText(\"u\");\n  if (taipoKeysPressed == getTaipoBitmap(\"AT\")) sendText(\"q\");\n  if (taipoKeysPressed == getTaipoBitmap(\"AO\")) sendText(\"l\");\n  if (taipoKeysPressed == getTaipoBitmap(\"NI\")) sendText(\"y\");\n  if (taipoKeysPressed == getTaipoBitmap(\"SI\")) sendText(\"f\");\n  if (taipoKeysPressed == getTaipoBitmap(\"SN\")) sendText(\"p\");\n  if (taipoKeysPressed == getTaipoBitmap(\"RN\")) sendText(\"z\");\n  if (taipoKeysPressed == getTaipoBitmap(\"RS\")) sendText(\"b\");\n  if (taipoKeysPressed == getTaipoBitmap(\"TE\")) sendText(\"h\");\n  if (taipoKeysPressed == getTaipoBitmap(\"AE\")) sendText(\"d\");\n  if (taipoKeysPressed == getTaipoBitmap(\"RI\")) sendText(\"g\");\n  if (taipoKeysPressed == getTaipoBitmap(\"RT\")) sendText(\"x\");\n  if (taipoKeysPressed == getTaipoBitmap(\"IO\")) sendText(\"k\");\n  if (taipoKeysPressed == getTaipoBitmap(\"SE\")) sendText(\"v\");\n  if (taipoKeysPressed == getTaipoBitmap(\"NA\")) sendText(\"j\");\n  if (taipoKeysPressed == getTaipoBitmap(\"RE\")) sendText(\"m\");\n  if (taipoKeysPressed == getTaipoBitmap(\"IA\")) sendText(\"w\");\n  if (taipoKeysPressed == getTaipoBitmap(\"ST\")) sendText(\"/\");\n  if (taipoKeysPressed == getTaipoBitmap(\"NO\")) sendText(\"-\");\n  if (taipoKeysPressed == getTaipoBitmap(\"IT\")) sendText(\"?\");\n  if (taipoKeysPressed == getTaipoBitmap(\"NE\")) sendText(\",\");\n  if (taipoKeysPressed == getTaipoBitmap(\"RO\")) sendText(\";\");\n  if (taipoKeysPressed == getTaipoBitmap(\"SA\")) sendText(\"'\");\n  if (taipoKeysPressed == getTaipoBitmap(\"SNI\")) tapScanCode(0x2b); // tab\n  if (taipoKeysPressed == getTaipoBitmap(\"OTE\")) tapScanCode(0x28); // enter\n  if (taipoKeysPressed == getTaipoBitmap(\"0\")) tapScanCode(0x2a); // backspace\n  if (taipoKeysPressed == getTaipoBitmap(\"R0\")) sendText(\"R\");\n  if (taipoKeysPressed == getTaipoBitmap(\"S0\")) sendText(\"S\");\n  if (taipoKeysPressed == getTaipoBitmap(\"N0\")) sendText(\"N\");\n  if (taipoKeysPressed == getTaipoBitmap(\"I0\")) sendText(\"I\");\n  if (taipoKeysPressed == getTaipoBitmap(\"A0\")) sendText(\"A\");\n  if (taipoKeysPressed == getTaipoBitmap(\"O0\")) sendText(\"O\");\n  if (taipoKeysPressed == getTaipoBitmap(\"T0\")) sendText(\"T\");\n  if (taipoKeysPressed == getTaipoBitmap(\"E0\")) sendText(\"E\");\n  if (taipoKeysPressed == getTaipoBitmap(\"OE0\")) sendText(\"C\");\n  if (taipoKeysPressed == getTaipoBitmap(\"OT0\")) sendText(\"U\");\n  if (taipoKeysPressed == getTaipoBitmap(\"AT0\")) sendText(\"Q\");\n  if (taipoKeysPressed == getTaipoBitmap(\"AO0\")) sendText(\"L\");\n  if (taipoKeysPressed == getTaipoBitmap(\"NI0\")) sendText(\"Y\");\n  if (taipoKeysPressed == getTaipoBitmap(\"SI0\")) sendText(\"F\");\n  if (taipoKeysPressed == getTaipoBitmap(\"SN0\")) sendText(\"P\");\n  if (taipoKeysPressed == getTaipoBitmap(\"RN0\")) sendText(\"Z\");\n  if (taipoKeysPressed == getTaipoBitmap(\"RS0\")) sendText(\"B\");\n  if (taipoKeysPressed == getTaipoBitmap(\"TE0\")) sendText(\"H\");\n  if (taipoKeysPressed == getTaipoBitmap(\"AE0\")) sendText(\"D\");\n  if (taipoKeysPressed == getTaipoBitmap(\"RI0\")) sendText(\"G\");\n  if (taipoKeysPressed == getTaipoBitmap(\"RT0\")) sendText(\"X\");\n  if (taipoKeysPressed == getTaipoBitmap(\"IO0\")) sendText(\"K\");\n  if (taipoKeysPressed == getTaipoBitmap(\"SE0\")) sendText(\"V\");\n  if (taipoKeysPressed == getTaipoBitmap(\"NA0\")) sendText(\"J\");\n  if (taipoKeysPressed == getTaipoBitmap(\"RE0\")) sendText(\"M\");\n  if (taipoKeysPressed == getTaipoBitmap(\"IA0\")) sendText(\"W\");\n  if (taipoKeysPressed == getTaipoBitmap(\"ST0\")) sendText(\"\\\\\");\n  if (taipoKeysPressed == getTaipoBitmap(\"NO0\")) sendText(\"_\");\n  if (taipoKeysPressed == getTaipoBitmap(\"IT0\")) sendText(\"!\");\n  if (taipoKeysPressed == getTaipoBitmap(\"NE0\")) sendText(\".\");\n  if (taipoKeysPressed == getTaipoBitmap(\"RO0\")) sendText(\":\");\n  if (taipoKeysPressed == getTaipoBitmap(\"SA0\")) sendText(\"\\\"\");\n  if (taipoKeysPressed == getTaipoBitmap(\"SNI0\")) tapScanCode(0x4c); // del\n  if (taipoKeysPressed == getTaipoBitmap(\"OTE0\")) tapScanCode(0x29); // esc\n  if (taipoKeysPressed == getTaipoBitmap(\"1\")) tapScanCode(0x2c); // space\n  if (taipoKeysPressed == getTaipoBitmap(\"R1\")) sendText(\">\");\n  if (taipoKeysPressed == getTaipoBitmap(\"S1\")) sendText(\"}\");\n  if (taipoKeysPressed == getTaipoBitmap(\"N1\")) sendText(\"]\");\n  if (taipoKeysPressed == getTaipoBitmap(\"I1\")) sendText(\")\");\n  if (taipoKeysPressed == getTaipoBitmap(\"A1\")) sendText(\"<\");\n  if (taipoKeysPressed == getTaipoBitmap(\"O1\")) sendText(\"{\");\n  if (taipoKeysPressed == getTaipoBitmap(\"T1\")) sendText(\"[\");\n  if (taipoKeysPressed == getTaipoBitmap(\"E1\")) sendText(\"(\");\n  if (taipoKeysPressed == getTaipoBitmap(\"OE1\")) sendText(\"1\");\n  if (taipoKeysPressed == getTaipoBitmap(\"OT1\")) sendText(\"2\");\n  if (taipoKeysPressed == getTaipoBitmap(\"AT1\")) sendText(\"3\");\n  if (taipoKeysPressed == getTaipoBitmap(\"AO1\")) sendText(\"4\");\n  if (taipoKeysPressed == getTaipoBitmap(\"NI1\")) sendText(\"5\");\n  if (taipoKeysPressed == getTaipoBitmap(\"SI1\")) sendText(\"6\");\n  if (taipoKeysPressed == getTaipoBitmap(\"SN1\")) sendText(\"7\");\n  if (taipoKeysPressed == getTaipoBitmap(\"RN1\")) sendText(\"8\");\n  if (taipoKeysPressed == getTaipoBitmap(\"RS1\")) sendText(\"9\");\n  if (taipoKeysPressed == getTaipoBitmap(\"TE1\")) sendText(\"0\");\n  if (taipoKeysPressed == getTaipoBitmap(\"AE1\")) sendText(\"@\");\n  if (taipoKeysPressed == getTaipoBitmap(\"RI1\")) sendText(\"#\");\n  if (taipoKeysPressed == getTaipoBitmap(\"RT1\")) sendText(\"^\");\n  if (taipoKeysPressed == getTaipoBitmap(\"IO1\")) sendText(\"+\");\n  if (taipoKeysPressed == getTaipoBitmap(\"SE1\")) sendText(\"*\");\n  if (taipoKeysPressed == getTaipoBitmap(\"NA1\")) sendText(\"=\");\n  if (taipoKeysPressed == getTaipoBitmap(\"RE1\")) sendText(\"$\");\n  if (taipoKeysPressed == getTaipoBitmap(\"IA1\")) sendText(\"&\");\n  if (taipoKeysPressed == getTaipoBitmap(\"ST1\")) sendText(\"|\");\n  if (taipoKeysPressed == getTaipoBitmap(\"NO1\")) sendText(\"%\");\n  if (taipoKeysPressed == getTaipoBitmap(\"NE1\")) sendText(\"~\");\n  if (taipoKeysPressed == getTaipoBitmap(\"SA1\")) sendText(\"`\");\n  if (taipoKeysPressed == getTaipoBitmap(\"SA1\")) sendText(\"`\");\n  if (taipoKeysPressed == getTaipoBitmap(\"I01\")) tapScanCode(0xbd); // play pause\n  if (taipoKeysPressed == getTaipoBitmap(\"A01\")) tapScanCode(0xa5); // next track\n  if (taipoKeysPressed == getTaipoBitmap(\"O01\")) tapScanCode(0x80); // vol up\n  if (taipoKeysPressed == getTaipoBitmap(\"T01\")) tapScanCode(0x81); // vol down\n  if (taipoKeysPressed == getTaipoBitmap(\"E01\")) tapScanCode(0xa6); // prev track\n  if (taipoKeysPressed == getTaipoBitmap(\"RT01\")) {pressScanCode(0xe0);pressScanCode(0x1b);releaseScanCode(0x1b);releaseScanCode(0xe0);} // cut\n  if (taipoKeysPressed == getTaipoBitmap(\"IO01\")) {pressScanCode(0xe0);pressScanCode(0x06);releaseScanCode(0x06);releaseScanCode(0xe0);} // copy\n  if (taipoKeysPressed == getTaipoBitmap(\"SE01\")) {pressScanCode(0xe0);pressScanCode(0x19);releaseScanCode(0x19);releaseScanCode(0xe0);} // paste\n  if (taipoKeysPressed == getTaipoBitmap(\"NA01\")) {pressScanCode(0xe0);pressScanCode(0x1d);releaseScanCode(0x1d);releaseScanCode(0xe0);} // undo\n  \n  if (side == 0) { // reset\n    taipoKeysPressedL = 0;\n  } else {\n    taipoKeysPressedR = 0;\n  }\n}\n\nfunc taipoCheckOneshot(side, bitmap, excludeBitmap) var{\n  var taipoKeysPressed;\n  var taipoKeysCurrentlyPressed;\n  if (side == 0) {\n    taipoKeysPressed = taipoKeysPressedL;\n    taipoKeysCurrentlyPressed = taipoKeysCurrentlyPressedL;\n  } else {\n    taipoKeysPressed = taipoKeysPressedR;\n    taipoKeysCurrentlyPressed = taipoKeysCurrentlyPressedR;\n  }\n\n  var oneshot = (taipoKeysCurrentlyPressed & bitmap) == bitmap; // Check if keys held down\n  oneshot = oneshot && !(taipoKeysCurrentlyPressed & excludeBitmap); // Check that no excluded keys are held down\n  return oneshot;\n}\n\n// Update oneshot keys EX modifiers, arrow keys, etc\nfunc taipoOneshotUpdate(side) {\n  var taipoKeysPressed;\n  var taipoKeysCurrentlyPressed;\n  if (side == 0) {\n    taipoKeysPressed = taipoKeysPressedL;\n    taipoKeysCurrentlyPressed = taipoKeysCurrentlyPressedL;\n  } else {\n    taipoKeysPressed = taipoKeysPressedR;\n    taipoKeysCurrentlyPressed = taipoKeysCurrentlyPressedR;\n  }\n\n  if (taipoKeysCurrentlyPressed == getTaipoBitmap(\"OTE1\")) { // ALT_GR\n    pressScanCode(0xe6); // SC_R_ALT\n  } else {\n    releaseScanCode(0xe6); // SC_R_ALT\n  }\n\n  // Format (taipoCheckOneshot(side, getTaipoBitmap(\"Keys\"), getTaipoBitmap(\"Excluded keys\")))\n  // This allows for multiple to be pressed at the same time\n  if (taipoCheckOneshot(side, getTaipoBitmap(\"RA\"), getTaipoBitmap(\"01\"))) { // GUI \n    pressScanCode(0xe3); // SC_L_META\n  } else if (!taipoCheckOneshot(!side, getTaipoBitmap(\"RA\"), getTaipoBitmap(\"01\"))){ // Release if other side not being held down\n    releaseScanCode(0xe3); // SC_L_META\n  }\n\n  if (taipoCheckOneshot(side, getTaipoBitmap(\"RA0\"), getTaipoBitmap(\"1\"))) { // LEFT \n    pressScanCode(0x50); // SC_LEFT\n  } else if (!taipoCheckOneshot(!side, getTaipoBitmap(\"RA0\"), getTaipoBitmap(\"1\"))){\n    releaseScanCode(0x50); // SC_LEFT\n  }\n\n  if (taipoCheckOneshot(side, getTaipoBitmap(\"RA1\"), getTaipoBitmap(\"0\"))) { // PAGEUP \n    pressScanCode(0x4b); // SC_PAGE_UP\n  } else if (!taipoCheckOneshot(!side, getTaipoBitmap(\"RA1\"), getTaipoBitmap(\"0\"))){\n    releaseScanCode(0x4b); // SC_PAGE_UP\n  }\n\n\n  if (taipoCheckOneshot(side, getTaipoBitmap(\"SO\"), getTaipoBitmap(\"01\"))) { // ALT \n    pressScanCode(0xe2); // SC_L_ALT\n  } else if (!taipoCheckOneshot(!side, getTaipoBitmap(\"SO\"), getTaipoBitmap(\"01\"))){\n    releaseScanCode(0xe2); // SC_L_ALT\n  }\n\n  if (taipoCheckOneshot(side, getTaipoBitmap(\"SO0\"), getTaipoBitmap(\"1\"))) { // DOWN \n    pressScanCode(0x51); // SC_DOWN\n  } else if (!taipoCheckOneshot(!side, getTaipoBitmap(\"SO0\"), getTaipoBitmap(\"1\"))){\n    releaseScanCode(0x51); // SC_DOWN\n  }\n\n  if (taipoCheckOneshot(side, getTaipoBitmap(\"SO1\"), getTaipoBitmap(\"0\"))) { // HOME \n    pressScanCode(0x4a); // SC_HOME\n  } else if (!taipoCheckOneshot(!side, getTaipoBitmap(\"SO1\"), getTaipoBitmap(\"0\"))){\n    releaseScanCode(0x4a); // SC_HOME\n  }\n\n\n  if (taipoCheckOneshot(side, getTaipoBitmap(\"NT\"), getTaipoBitmap(\"01\"))) { // CTRL \n    pressScanCode(0xe0); // SC_L_CTRL\n  } else if (!taipoCheckOneshot(!side, getTaipoBitmap(\"NT\"), getTaipoBitmap(\"01\"))){\n    releaseScanCode(0xe0); // SC_L_CTRL\n  }\n\n  if (taipoCheckOneshot(side, getTaipoBitmap(\"NT0\"), getTaipoBitmap(\"1\"))) { // UP \n    pressScanCode(0x52); // SC_UP\n  } else if (!taipoCheckOneshot(!side, getTaipoBitmap(\"NT0\"), getTaipoBitmap(\"1\"))){\n    releaseScanCode(0x52); // SC_UP\n  }\n\n  if (taipoCheckOneshot(side, getTaipoBitmap(\"NT1\"), getTaipoBitmap(\"0\"))) { // END \n    pressScanCode(0x4d); // SC_END\n  } else if (!taipoCheckOneshot(!side, getTaipoBitmap(\"NT1\"), getTaipoBitmap(\"0\"))){\n    releaseScanCode(0x4d); // SC_END\n  }\n\n  if (taipoCheckOneshot(side, getTaipoBitmap(\"IE\"), getTaipoBitmap(\"01\"))) { // SHIFT \n    pressScanCode(0xe1); // SC_L_SHIFT\n  } else if (!taipoCheckOneshot(!side, getTaipoBitmap(\"IE\"), getTaipoBitmap(\"01\"))){\n    releaseScanCode(0xe1); // SC_L_SHIFT\n  }\n\n  if (taipoCheckOneshot(side, getTaipoBitmap(\"IE0\"), getTaipoBitmap(\"1\"))) { // RIGHT \n    pressScanCode(0x4f); // SC_RIGHT\n  } else if (!taipoCheckOneshot(!side, getTaipoBitmap(\"IE0\"), getTaipoBitmap(\"1\"))){\n    releaseScanCode(0x4f); // SC_RIGHT\n  }\n\n  if (taipoCheckOneshot(side, getTaipoBitmap(\"IE1\"), getTaipoBitmap(\"0\"))) { // PAGEDOWN \n    pressScanCode(0x4e); // SC_PAGE_DOWN\n  } else if (!taipoCheckOneshot(!side, getTaipoBitmap(\"IE1\"), getTaipoBitmap(\"0\"))){\n    releaseScanCode(0x4e); // SC_PAGE_DOWN\n  }\n}\n\n// Input:\n// 01 = Thumb buttons\n// RSNIAOTE = buttons\n// 01RS // example input\nfunc getTaipoBitmap(string) var{\n  var i = 0;\n  var bitmap = 0;\n  while (string[i] != 0){\n    if (string[i] == \"0\"[0]) { // when using an index, it converts the string to decimal, so need to convert other string into decimal too\n      bitmap = bitmap | (1 << 9);\n    } else if (string[i] == \"1\"[0]) {\n      bitmap = bitmap | (1 << 8);\n    } else if (string[i] == \"R\"[0]) {\n      bitmap = bitmap | (1 << 7);\n    } else if (string[i] == \"S\"[0]) {\n      bitmap = bitmap | (1 << 6);\n    } else if (string[i] == \"N\"[0]) {\n      bitmap = bitmap | (1 << 5);\n    } else if (string[i] == \"I\"[0]) {\n      bitmap = bitmap | (1 << 4);\n    } else if (string[i] == \"A\"[0]) {\n      bitmap = bitmap | (1 << 3);\n    } else if (string[i] == \"O\"[0]) {\n      bitmap = bitmap | (1 << 2);\n    } else if (string[i] == \"T\"[0]) {\n      bitmap = bitmap | (1 << 1);\n    } else if (string[i] == \"E\"[0]) {\n      bitmap = bitmap | (1 << 0);\n    } \n    \n    i = i+1;\n  }\n  return bitmap;\n}"
+			},
+			"options": {},
+			"sequences": {}
+		}
+	],
+	"global": {
+		"scripts": [],
+		"layer": {
+			"id": -1,
+			"name": "Global",
+			"keys": [
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null
+			],
+			"scripts": {},
+			"user_scripts": {},
+			"options": {},
+			"sequences": {}
+		}
+	}
+}
