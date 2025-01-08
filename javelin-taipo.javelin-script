@@ -275,7 +275,6 @@ func taipoKeysUpdate(side) {
   if (taipoKeysPressed == getTaipoBitmap("NO1")) sendText("%");
   if (taipoKeysPressed == getTaipoBitmap("NE1")) sendText("~");
   if (taipoKeysPressed == getTaipoBitmap("SA1")) sendText("`");
-  if (taipoKeysPressed == getTaipoBitmap("SA1")) sendText("`");
   if (taipoKeysPressed == getTaipoBitmap("I01")) tapScanCode(0xbd); // play pause
   if (taipoKeysPressed == getTaipoBitmap("A01")) tapScanCode(0xa5); // next track
   if (taipoKeysPressed == getTaipoBitmap("O01")) tapScanCode(0x80); // vol up
@@ -335,9 +334,9 @@ func taipoOneshotUpdate(side) {
     releaseScanCode(0xe3); // SC_L_META
   }
 
-  if (taipoCheckOneshot(side, getTaipoBitmap("RA0"), getTaipoBitmap("1"))) { // LEFT 
+  if (taipoCheckOneshot(side, getTaipoBitmap("IE0"), getTaipoBitmap("1"))) { // LEFT 
     pressScanCode(0x50); // SC_LEFT
-  } else if (!taipoCheckOneshot(!side, getTaipoBitmap("RA0"), getTaipoBitmap("1"))){
+  } else if (!taipoCheckOneshot(!side, getTaipoBitmap("IE0"), getTaipoBitmap("1"))){
     releaseScanCode(0x50); // SC_LEFT
   }
 
@@ -354,9 +353,9 @@ func taipoOneshotUpdate(side) {
     releaseScanCode(0xe2); // SC_L_ALT
   }
 
-  if (taipoCheckOneshot(side, getTaipoBitmap("SO0"), getTaipoBitmap("1"))) { // DOWN 
+  if (taipoCheckOneshot(side, getTaipoBitmap("NT0"), getTaipoBitmap("1"))) { // DOWN 
     pressScanCode(0x51); // SC_DOWN
-  } else if (!taipoCheckOneshot(!side, getTaipoBitmap("SO0"), getTaipoBitmap("1"))){
+  } else if (!taipoCheckOneshot(!side, getTaipoBitmap("NT0"), getTaipoBitmap("1"))){
     releaseScanCode(0x51); // SC_DOWN
   }
 
@@ -373,9 +372,9 @@ func taipoOneshotUpdate(side) {
     releaseScanCode(0xe0); // SC_L_CTRL
   }
 
-  if (taipoCheckOneshot(side, getTaipoBitmap("NT0"), getTaipoBitmap("1"))) { // UP 
+  if (taipoCheckOneshot(side, getTaipoBitmap("SO0"), getTaipoBitmap("1"))) { // UP 
     pressScanCode(0x52); // SC_UP
-  } else if (!taipoCheckOneshot(!side, getTaipoBitmap("NT0"), getTaipoBitmap("1"))){
+  } else if (!taipoCheckOneshot(!side, getTaipoBitmap("SO0"), getTaipoBitmap("1"))){
     releaseScanCode(0x52); // SC_UP
   }
 
@@ -391,9 +390,9 @@ func taipoOneshotUpdate(side) {
     releaseScanCode(0xe1); // SC_L_SHIFT
   }
 
-  if (taipoCheckOneshot(side, getTaipoBitmap("IE0"), getTaipoBitmap("1"))) { // RIGHT 
+  if (taipoCheckOneshot(side, getTaipoBitmap("RA0"), getTaipoBitmap("1"))) { // RIGHT 
     pressScanCode(0x4f); // SC_RIGHT
-  } else if (!taipoCheckOneshot(!side, getTaipoBitmap("IE0"), getTaipoBitmap("1"))){
+  } else if (!taipoCheckOneshot(!side, getTaipoBitmap("RA0"), getTaipoBitmap("1"))){
     releaseScanCode(0x4f); // SC_RIGHT
   }
 
