@@ -13,12 +13,12 @@
 
     press script for left inner button:
     ```cpp
-    pressTaipoInner(0)
+    pressTaipoInner(0);
     ```
 
     release script for right R button:
     ```cpp
-    releaseTaipoR(1)
+    releaseTaipoR(1);
     ```
 
     
