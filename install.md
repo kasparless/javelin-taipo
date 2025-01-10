@@ -21,4 +21,7 @@
     releaseTaipoR(1);
     ```
 
-    
+<p align="center">
+  <img src="docs/images/scrn1.jpg"><br>
+  Screenshot
+</p> 
