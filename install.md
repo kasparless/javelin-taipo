@@ -22,6 +22,6 @@
     ```
 
 <p align="center">
-  <img src="docs/images/scrn1.jpg"><br>
+  <img src="docs/images/scrn1.png"><br>
   Screenshot
 </p> 
