@@ -51,31 +51,31 @@ W,Y,alpha_cap,
 X,Y,alpha_cap,
 Y,Y,alpha_cap,
 Z,Y,alpha_cap,
-Down,N,arrow,
-Left,N,arrow,
-Right,N,arrow,
-Up,N,arrow,
-F1,Y,F-key,
-F10,Y,F-key,
-F11,Y,F-key,
-F12,Y,F-key,
-F2,Y,F-key,
-F3,Y,F-key,
-F4,Y,F-key,
-F5,Y,F-key,
-F6,Y,F-key,
-F7,Y,F-key,
-F8,Y,F-key,
-F9,Y,F-key,
-Layer 0,N,layer,
-Layer 1,N,layer,
-Layer 2,N,layer,
-Layer 3,N,layer,
-Alt,N,modifier,
-AltGr,N,modifier,
-Ctrl,N,modifier,
-Gui,N,modifier,
-Shift,N,modifier,
+Down,N,arrow,Jav: in javelin-script taipoOneshotUpdate
+Left,N,arrow,Jav: in javelin-script taipoOneshotUpdate
+Right,N,arrow,Jav: in javelin-script taipoOneshotUpdate
+Up,N,arrow,Jav: in javelin-script taipoOneshotUpdate
+F1,Y,F-key,Py: hex code manual in convertTextToKeypress
+F10,Y,F-key,Py: hex code manual in convertTextToKeypress
+F11,Y,F-key,Py: hex code manual in convertTextToKeypress
+F12,Y,F-key,Py: hex code manual in convertTextToKeypress
+F2,Y,F-key,Py: hex code manual in convertTextToKeypress
+F3,Y,F-key,Py: hex code manual in convertTextToKeypress
+F4,Y,F-key,Py: hex code manual in convertTextToKeypress
+F5,Y,F-key,Py: hex code manual in convertTextToKeypress
+F6,Y,F-key,Py: hex code manual in convertTextToKeypress
+F7,Y,F-key,Py: hex code manual in convertTextToKeypress
+F8,Y,F-key,Py: hex code manual in convertTextToKeypress
+F9,Y,F-key,Py: hex code manual in convertTextToKeypress
+Layer 0,N,layer,use javelin layers instead
+Layer 1,N,layer,use javelin layers instead
+Layer 2,N,layer,use javelin layers instead
+Layer 3,N,layer,use javelin layers instead
+Alt,N,modifier,Jav: in javelin-script taipoOneshotUpdate
+AltGr,N,modifier,Jav: in javelin-script taipoOneshotUpdate
+Ctrl,N,modifier,Jav: in javelin-script taipoOneshotUpdate
+Gui,N,modifier,Jav: in javelin-script taipoOneshotUpdate
+Shift,N,modifier,Jav: in javelin-script taipoOneshotUpdate
 Mu,N,Mu,
 0,Y,number,
 1,Y,number,
@@ -88,29 +88,29 @@ Mu,N,Mu,
 8,Y,number,
 9,Y,number,
 unassigned,N,placeholder,
-Backspace,Y,special,
-Del,Y,special,
-Enter,Y,special,
-Esc,Y,special,
-Ins,Y,special,maybe?
-Space,Y,special,
-Tab,Y,special,
-Copy,Y,special_edit,
-Cut,Y,special_edit,
-Paste,Y,special_edit,
-Undo,Y,special_edit,
-End,N,special_nav,maybe?
-Home,N,special_nav,maybe?
-PgDn,N,special_nav,maybe?
-PgUp,N,special_nav,maybe?
-Brightness Down,Y,special_os,
-Brightness Up,Y,special_os,
-Next Track,Y,special_os,
-Play/Pause,Y,special_os,
-Previous Track,Y,special_os,
-Print Screen,Y,special_os,
-Volume Down,Y,special_os,
-Volume Up,Y,special_os,
+Backspace,Y,special,Py: hex code manual in convertTextToKeypress
+Del,Y,special,Py: hex code manual in convertTextToKeypress
+Enter,Y,special,Py: hex code manual in convertTextToKeypress
+Esc,Y,special,Py: hex code manual in convertTextToKeypress
+Ins,Y,special,Py: hex code manual in convertTextToKeypress
+Space,Y,special,Py: hex code manual in convertTextToKeypress
+Tab,Y,special,Py: hex code manual in convertTextToKeypress
+Copy,Y,special_edit,Py: hex code manual in convertTextToKeypress
+Cut,Y,special_edit,Py: hex code manual in convertTextToKeypress
+Paste,Y,special_edit,Py: hex code manual in convertTextToKeypress
+Undo,Y,special_edit,Py: hex code manual in convertTextToKeypress
+End,N,special_nav,Jav: in javelin-script taipoOneshotUpdate
+Home,N,special_nav,Jav: in javelin-script taipoOneshotUpdate
+PgDn,N,special_nav,Jav: in javelin-script taipoOneshotUpdate
+PgUp,N,special_nav,Jav: in javelin-script taipoOneshotUpdate
+Brightness Down,Y,special_os,Py: hex code manual in convertTextToKeypress
+Brightness Up,Y,special_os,Py: hex code manual in convertTextToKeypress
+Next Track,Y,special_os,Py: hex code manual in convertTextToKeypress
+Play/Pause,Y,special_os,Py: hex code manual in convertTextToKeypress
+Previous Track,Y,special_os,Py: hex code manual in convertTextToKeypress
+Print Screen,Y,special_os,Py: hex code manual in convertTextToKeypress
+Volume Down,Y,special_os,Py: hex code manual in convertTextToKeypress
+Volume Up,Y,special_os,Py: hex code manual in convertTextToKeypress
 ',Y,symbol,
 -,Y,symbol,
 !,Y,symbol,

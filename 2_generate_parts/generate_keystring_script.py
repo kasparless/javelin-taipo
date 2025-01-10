@@ -56,9 +56,8 @@ def convertTextToKeypress(text):
   if text.lower() == "volume down": keypress = r"tapScanCode(0x81); // vol down" # SC_VOLUME_DOWN 
   if text.lower() == "next track": keypress = r"tapScanCode(0xa5); // next track" # SC_CONSUMER_SCAN_NEXT_TRACK 
   if text.lower() == "previous track": keypress = r"tapScanCode(0xa6); // prev track" # SC_CONSUMER_SCAN_PREVIOUS_TRACK 
-  # TODO
   if text.lower() == "print screen": keypress = f"tapScanCode(0x46); //print screen" # SC_SYS_RQ
-  if text.lower() == "brightness up": keypress = f"tapScanCode(0xde); // brightness up" # 
+  if text.lower() == "brightness up": keypress = f"tapScanCode(0xde); // brightness up" # Not yet in https://github.com/jthlim/javelin-steno/blob/50d4396380b5e5b5597b70d6a413f023216ae2ab/script.md
   if text.lower() == "brightness down": keypress = f"tapScanCode(0xdf); // brightness down" # 
 
   # Special
