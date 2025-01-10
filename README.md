@@ -35,3 +35,11 @@ https://github.com/tangybbq/keyboard-firmware/blob/9869f0d17bcc940bdf4130b8bfe8d
 
 Javelin is licensed under Polyform Noncommercial License 1.0.0, this repo currently uses same license (TBC).
 <https://polyformproject.org/licenses/noncommercial/1.0.0>
+
+## TODO / Issues
+
+- Build typey-type resources
+- Document build sequences to a more beginner-friendly granularity
+- vol up/down not working on windows
+- AltGr not confirmed on windows
+- scan time might need some tuning, eg PgUp and PgDn combos hard to hit
