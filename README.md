@@ -38,8 +38,6 @@ Javelin is licensed under Polyform Noncommercial License 1.0.0, this repo curren
 
 ## TODO / Issues
 
-- Build typey-type resources
-- Document build sequences to a more beginner-friendly granularity
 - vol up/down not working on windows
 - AltGr not confirmed on windows
-- scan time might need some tuning, eg PgUp and PgDn combos hard to hit
+- scan time might need some tuning, combos off modifiers (eg PgUp and PgDn) difficult
