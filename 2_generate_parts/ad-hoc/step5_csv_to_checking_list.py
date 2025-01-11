@@ -29,8 +29,8 @@ thumb_sort_order = pd.DataFrame({'sort_order': [1,2,3,4], 'thumb_row': ["00","10
 
 # %%
 df = pd.merge(
-  pd.read_csv("keymap.csv"),
-  pd.read_csv("include_mask.csv"),
+  pd.read_csv("../keymap.csv"),
+  pd.read_csv("../include_mask.csv"),
   how="left",
   on="sendText",
 )
@@ -45,3 +45,5 @@ df = pd.merge(df,thumb_sort_order,on="thumb_row",how="left")
 df = df.sort_values(by=["chart_row","top_row","bottom_row","sort_order"])
 df = df[["sendText","top_row","bottom_row","thumb_row"]]
 df.to_csv("checking_list.csv", index=False)
+
+# %%

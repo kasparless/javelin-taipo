@@ -96,3 +96,4 @@ processed_lines = [line.replace("😂", "") for line in lines[1:]]
 
 with open("keystring_list.javelin-script", "w") as file:
     file.writelines(processed_lines)
+# %%
