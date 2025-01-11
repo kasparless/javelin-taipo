@@ -21,7 +21,7 @@ func activate0() {
 }
 
 func activate1() {
-  setLayer(1, "layer_id: 180924322");
+  setLayer(1, "layer_id: 198080730");
 
 }
 
@@ -29,6 +29,7 @@ func activateDynamic() {
   dispatchToLayer([[[@activate0, @activate1]]]);
 }
 func activateGlobal() {
+  setEnableButtonStates(([[01 00]][resolveLayerIndex()]));
 
 }
 func deactivate0() {
@@ -67,7 +68,23 @@ func _releaseScanCode(scanCode, isModifier) {
     localPostRelease();
   }
 }
-// Layer 01 Script: taipo
+// Global Script: StenoModeUpdate Callback
+func onStenoModeUpdate() {
+  var stenoMode = getParameter("steno_mode");
+  if (stenoMode == "embedded") {
+    setRgb(0, 0, 1, 0);
+  } else if (stenoMode == "gemini") {
+    setRgb(0, 1, 0, 0);
+  } else if (stenoMode == "tx_bolt") {
+    setRgb(0, 0, 0, 1);
+  } else if (stenoMode == "procat") {
+    setRgb(0, 1, 1, 0);
+  } else if (stenoMode == "plover_hid") {
+    setRgb(0, 0, 1, 1);
+  }
+}
+
+// Layer 01 Script: Taipo
 //https://inkeys.wiki/en/keymaps/taipo
 const ONESHOT_TIMEOUT = 100;
 const TAIPO_TIMEOUT = 50; // after this timeout, the keys are considered sent. Set to -1 to change this to on release
@@ -343,11 +360,27 @@ func taipoKeysUpdate(side) {
   if (taipoKeysPressed == getTaipoBitmap("NO1")) sendText("%");
   if (taipoKeysPressed == getTaipoBitmap("NE1")) sendText("~");
   if (taipoKeysPressed == getTaipoBitmap("SA1")) sendText("`");
+  if (taipoKeysPressed == getTaipoBitmap("SNI1")) tapScanCode(0x48); // ins
+  if (taipoKeysPressed == getTaipoBitmap("R01")) tapScanCode(0x46); //print screen
+  if (taipoKeysPressed == getTaipoBitmap("S01")) tapScanCode(0xde); // brightness up
+  if (taipoKeysPressed == getTaipoBitmap("N01")) tapScanCode(0xdf); // brightness down
   if (taipoKeysPressed == getTaipoBitmap("I01")) tapScanCode(0xbd); // play pause
   if (taipoKeysPressed == getTaipoBitmap("A01")) tapScanCode(0xa5); // next track
   if (taipoKeysPressed == getTaipoBitmap("O01")) tapScanCode(0x80); // vol up
   if (taipoKeysPressed == getTaipoBitmap("T01")) tapScanCode(0x81); // vol down
   if (taipoKeysPressed == getTaipoBitmap("E01")) tapScanCode(0xa6); // prev track
+  if (taipoKeysPressed == getTaipoBitmap("OE01")) tapScanCode(0x3a); // f1
+  if (taipoKeysPressed == getTaipoBitmap("OT01")) tapScanCode(0x3b); // f2
+  if (taipoKeysPressed == getTaipoBitmap("AT01")) tapScanCode(0x3c); // f3
+  if (taipoKeysPressed == getTaipoBitmap("AO01")) tapScanCode(0x3d); // f4
+  if (taipoKeysPressed == getTaipoBitmap("NI01")) tapScanCode(0x3e); // f5
+  if (taipoKeysPressed == getTaipoBitmap("SI01")) tapScanCode(0x3f); // f6
+  if (taipoKeysPressed == getTaipoBitmap("SN01")) tapScanCode(0x40); // f7
+  if (taipoKeysPressed == getTaipoBitmap("RN01")) tapScanCode(0x41); // f8
+  if (taipoKeysPressed == getTaipoBitmap("RS01")) tapScanCode(0x42); // f9
+  if (taipoKeysPressed == getTaipoBitmap("TE01")) tapScanCode(0x43); // f10
+  if (taipoKeysPressed == getTaipoBitmap("AE01")) tapScanCode(0x44); // f11
+  if (taipoKeysPressed == getTaipoBitmap("RI01")) tapScanCode(0x45); // f12
   if (taipoKeysPressed == getTaipoBitmap("RT01")) {pressScanCode(0xe0);pressScanCode(0x1b);releaseScanCode(0x1b);releaseScanCode(0xe0);} // cut
 if (taipoKeysPressed == getTaipoBitmap("IO01")) {pressScanCode(0xe0);pressScanCode(0x06);releaseScanCode(0x06);releaseScanCode(0xe0);} // copy
 if (taipoKeysPressed == getTaipoBitmap("SE01")) {pressScanCode(0xe0);pressScanCode(0x19);releaseScanCode(0x19);releaseScanCode(0xe0);} // paste
@@ -504,21 +537,46 @@ func getTaipoBitmap(string) var{
   return bitmap;
 }
 
+// Prefab for :LHS
+// #prefab Taipo:Key01_LHS_R [{"t":"p","d":{"a":{"t":"s","script":"// Taipo LHS\\nR\npressTaipoR(0);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoR(0);"}}}]
+// #prefab Taipo:Key02_LHS_S [{"t":"p","d":{"a":{"t":"s","script":"// Taipo LHS\\nS\npressTaipoS(0);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoS(0);"}}}]
+// #prefab Taipo:Key03_LHS_N [{"t":"p","d":{"a":{"t":"s","script":"// Taipo LHS\\nN\npressTaipoN(0);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoN(0);"}}}]
+// #prefab Taipo:Key04_LHS_I [{"t":"p","d":{"a":{"t":"s","script":"// Taipo LHS\\nI\npressTaipoI(0);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoI(0);"}}}]
+// #prefab Taipo:Key09_LHS_A [{"t":"p","d":{"a":{"t":"s","script":"// Taipo LHS\\nA\npressTaipoA(0);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoA(0);"}}}]
+// #prefab Taipo:Key10_LHS_O [{"t":"p","d":{"a":{"t":"s","script":"// Taipo LHS\\nO\npressTaipoO(0);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoO(0);"}}}]
+// #prefab Taipo:Key11_LHS_T [{"t":"p","d":{"a":{"t":"s","script":"// Taipo LHS\\nT\npressTaipoT(0);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoT(0);"}}}]
+// #prefab Taipo:Key12_LHS_E [{"t":"p","d":{"a":{"t":"s","script":"// Taipo LHS\\nE\npressTaipoE(0);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoE(0);"}}}]
+// #prefab Taipo:Key17_LHS_Inner [{"t":"p","d":{"a":{"t":"s","script":"// Taipo LHS\\nInner\npressTaipoInner(0);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoInner(0);"}}}]
+// #prefab Taipo:Key18_LHS_Outer [{"t":"p","d":{"a":{"t":"s","script":"// Taipo LHS\\nOuter\npressTaipoOuter(0);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoOuter(0);"}}}]
+// Prefab for :RHS
+// #prefab Taipo:Key08_RHS_R [{"t":"p","d":{"a":{"t":"s","script":"// Taipo RHS\\nR\npressTaipoR(1);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoR(1);"}}}]
+// #prefab Taipo:Key07_RHS_S [{"t":"p","d":{"a":{"t":"s","script":"// Taipo RHS\\nS\npressTaipoS(1);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoS(1);"}}}]
+// #prefab Taipo:Key06_RHS_N [{"t":"p","d":{"a":{"t":"s","script":"// Taipo RHS\\nN\npressTaipoN(1);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoN(1);"}}}]
+// #prefab Taipo:Key05_RHS_I [{"t":"p","d":{"a":{"t":"s","script":"// Taipo RHS\\nI\npressTaipoI(1);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoI(1);"}}}]
+// #prefab Taipo:Key16_RHS_A [{"t":"p","d":{"a":{"t":"s","script":"// Taipo RHS\\nA\npressTaipoA(1);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoA(1);"}}}]
+// #prefab Taipo:Key15_RHS_O [{"t":"p","d":{"a":{"t":"s","script":"// Taipo RHS\\nO\npressTaipoO(1);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoO(1);"}}}]
+// #prefab Taipo:Key14_RHS_T [{"t":"p","d":{"a":{"t":"s","script":"// Taipo RHS\\nT\npressTaipoT(1);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoT(1);"}}}]
+// #prefab Taipo:Key13_RHS_E [{"t":"p","d":{"a":{"t":"s","script":"// Taipo RHS\\nE\npressTaipoE(1);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoE(1);"}}}]
+// #prefab Taipo:Key20_RHS_Inner [{"t":"p","d":{"a":{"t":"s","script":"// Taipo RHS\\nInner\npressTaipoInner(1);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoInner(1);"}}}]
+// #prefab Taipo:Key19_RHS_Outer [{"t":"p","d":{"a":{"t":"s","script":"// Taipo RHS\\nOuter\npressTaipoOuter(1);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoOuter(1);"}}}]
+
 func init() {
   const SCRIPT_ID_STENO_MODE_UPDATE = 9;
 
-  setRgb(0, 0, 1, 0);
+  // Update the RGB LED and register callback for future steno mode updates.
+  onStenoModeUpdate();
   setScript(SCRIPT_ID_STENO_MODE_UPDATE, @onStenoModeUpdate);
 
   const SCRIPT_ID_USER1 = 11;
   setScript(SCRIPT_ID_USER1, @user1ScriptSetLayer);
   activate0();
+  activateGlobal();
 }
 
 func user1ScriptSetLayer(layerId) {
   var layerActivate = 0;
   if (layerId == 0) layerActivate = @activate0;
-  if (layerId == 180924322) layerActivate = @activate1;
+  if (layerId == 198080730) layerActivate = @activate1;
   if (layerActivate == 0) return;
   deactivateGlobal();
   deactivateDynamic();
@@ -549,14 +607,14 @@ func onRelease1() {
 }
 
 func onPress1_0() {
-  pressStenoKey(26 /* "#1" */);
+  pressStenoKey(0 /* "S1" */);
 }
 func onRelease1_0() {
-  releaseStenoKey(26 /* "#1" */);
+  releaseStenoKey(0 /* "S1" */);
 }
 
 func onPress1_1() {
-  // Taipo\nR
+  // Taipo LHS\nR
   pressTaipoR(0);
 }
 func onRelease1_1() {
@@ -579,7 +637,7 @@ func onRelease2_0() {
 }
 
 func onPress2_1() {
-  // Tapio\nS
+  // Taipo LHS\nS
   pressTaipoS(0);
 }
 func onRelease2_1() {
@@ -602,7 +660,7 @@ func onRelease3_0() {
 }
 
 func onPress3_1() {
-  // Taipo\nN
+  // Taipo LHS\nN
   pressTaipoN(0);
 }
 func onRelease3_1() {
@@ -625,7 +683,7 @@ func onRelease4_0() {
 }
 
 func onPress4_1() {
-  // Taipo\nI
+  // Taipo LHS\nI
   pressTaipoI(0);
 }
 func onRelease4_1() {
@@ -641,10 +699,10 @@ func onRelease5() {
 }
 
 func onPress5_0() {
-  pressStenoKey(10 /* "*1" */);
+  pressStenoKey(26 /* "#1" */);
 }
 func onRelease5_0() {
-  releaseStenoKey(10 /* "*1" */);
+  releaseStenoKey(26 /* "#1" */);
 }
 
 func onPress6() {
@@ -655,10 +713,10 @@ func onRelease6() {
 }
 
 func onPress6_0() {
-  pressStenoKey(11 /* "*2" */);
+  pressStenoKey(10 /* "*1" */);
 }
 func onRelease6_0() {
-  releaseStenoKey(11 /* "*2" */);
+  releaseStenoKey(10 /* "*1" */);
 }
 
 func onPress7() {
@@ -676,7 +734,7 @@ func onRelease7_0() {
 }
 
 func onPress7_1() {
-  // Taipo\nI
+  // Taipo RHS\nI
   pressTaipoI(1);
 }
 func onRelease7_1() {
@@ -699,7 +757,7 @@ func onRelease8_0() {
 }
 
 func onPress8_1() {
-  // Taipo\nN
+  // Taipo RHS\nN
   pressTaipoN(1);
 }
 func onRelease8_1() {
@@ -722,7 +780,7 @@ func onRelease9_0() {
 }
 
 func onPress9_1() {
-  // Taipo\nS
+  // Taipo RHS\nS
   pressTaipoS(1);
 }
 func onRelease9_1() {
@@ -745,7 +803,7 @@ func onRelease10_0() {
 }
 
 func onPress10_1() {
-  // Taipo\nR
+  // Taipo RHS\nR
   pressTaipoR(1);
 }
 func onRelease10_1() {
@@ -768,18 +826,9 @@ func onRelease11_0() {
 }
 
 func onPress12() {
-  dispatchToLayer([[[@onPress12_0, @onPress12_1]]]);
+  dispatchToLayer([[[0, @onPress12_1]]]);
 }
 func onRelease12() {
-}
-
-func onPress12_0() {
-  deactivateGlobal();
-  deactivate0();
-  activate0();
-  activateGlobal();
-}
-func onRelease12_0() {
 }
 
 func onPress12_1() {
@@ -806,7 +855,7 @@ func onRelease13_0() {
 }
 
 func onPress13_1() {
-  // Tapio\nA
+  // Taipo LHS\nA
   pressTaipoA(0);
 }
 func onRelease13_1() {
@@ -829,7 +878,7 @@ func onRelease14_0() {
 }
 
 func onPress14_1() {
-  // Taipo\nO
+  // Taipo LHS\nO
   pressTaipoO(0);
 }
 func onRelease14_1() {
@@ -852,7 +901,7 @@ func onRelease15_0() {
 }
 
 func onPress15_1() {
-  // Taipo\nT
+  // Taipo LHS\nT
   pressTaipoT(0);
 }
 func onRelease15_1() {
@@ -875,7 +924,7 @@ func onRelease16_0() {
 }
 
 func onPress16_1() {
-  // Taipo\nE
+  // Taipo LHS\nE
   pressTaipoE(0);
 }
 func onRelease16_1() {
@@ -898,7 +947,7 @@ func onRelease17_0() {
 }
 
 func onPress17_1() {
-  // Taipo\nE
+  // Taipo RHS\nE
   pressTaipoE(1);
 }
 func onRelease17_1() {
@@ -921,7 +970,7 @@ func onRelease18_0() {
 }
 
 func onPress18_1() {
-  // Taipo\nT
+  // Taipo RHS\nT
   pressTaipoT(1);
 }
 func onRelease18_1() {
@@ -944,7 +993,7 @@ func onRelease19_0() {
 }
 
 func onPress19_1() {
-  // Taipo\nO
+  // Taipo RHS\nO
   pressTaipoO(1);
 }
 func onRelease19_1() {
@@ -967,7 +1016,7 @@ func onRelease20_0() {
 }
 
 func onPress20_1() {
-  // Taipo\nA
+  // Taipo RHS\nA
   pressTaipoA(1);
 }
 func onRelease20_1() {
@@ -1004,7 +1053,7 @@ func onRelease22_0() {
 }
 
 func onPress22_1() {
-  // Taipo\nInner
+  // Taipo LHS\nInner
   pressTaipoInner(0);
 }
 func onRelease22_1() {
@@ -1027,7 +1076,7 @@ func onRelease23_0() {
 }
 
 func onPress23_1() {
-  // Taipo\nOuter
+  // Taipo LHS\nOuter
   pressTaipoOuter(0);
 }
 func onRelease23_1() {
@@ -1050,7 +1099,7 @@ func onRelease24_0() {
 }
 
 func onPress24_1() {
-  // Taipo\nOuter
+  // Taipo RHS\nOuter
   pressTaipoOuter(1);
 }
 func onRelease24_1() {
@@ -1073,7 +1122,7 @@ func onRelease25_0() {
 }
 
 func onPress25_1() {
-  // Taipo\nInner
+  // Taipo RHS\nInner
   pressTaipoInner(1);
 }
 func onRelease25_1() {
@@ -1087,33 +1136,18 @@ func onPress26() {
 func onRelease26() {
 }
 
-func onStenoModeUpdate() {
-  var stenoMode = getParameter("steno_mode");
-  if (stenoMode == "embedded") {
-    setRgb(0, 0, 1, 0);
-  } else if (stenoMode == "gemini") {
-    setRgb(0, 1, 0, 0);
-  } else if (stenoMode == "tx_bolt") {
-    setRgb(0, 0, 0, 1);
-  } else if (stenoMode == "procat") {
-    setRgb(0, 1, 1, 0);
-  } else if (stenoMode == "plover_hid") {
-    setRgb(0, 0, 1, 1);
-  }
-}
 func onPress26_0() {
+  // Toggle\nSteno\nMode
+  // Toggle the steno mode between embedded and Gemini PR when USR is pressed.
+  // LED RGB is updated in Global StenoModeUpdate callback.
   if (getParameter("steno_mode") != "embedded") {
     console("set_steno_mode embedded");
-    setRgb(0, 0, 1, 0);
   } else {
     console("set_steno_mode gemini");
-    setRgb(0, 1, 0, 0);
   }
   releaseAll();
-
 }
 func onRelease26_0() {
-
 }
 
 func onPress27() {

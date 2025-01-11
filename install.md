@@ -71,27 +71,37 @@ Select 'edit layout', then add layer.
 ![alt text](<docs/images/Screenshot 2025-01-10 203634.png>)
 
 ###  Main script
-Select 'Custom Scripts' and click the plus to add a script.  Name it, and paste the code from thw `javelin-taipo` link above into the 'User Script' area.
+Select 'Custom Scripts' and click the plus to add a script.  Name it, and paste the code from the `javelin-taipo` link above into the 'User Script' area.
 
 ![alt text](<docs/images/Screenshot 2025-01-10 203717.png>)
 
 ![alt text](<docs/images/Screenshot 2025-01-10 203927.png>)
 
 ### Key scripts
-Select each key in turn add a 'press' and a 'release' script.  The naming convention is per instructions above, and in [key trigger scripts](key_trigger_scripts.javelin-script).
+Select each key in turn and select a 'Trigger' from the 'Taipo' layer.  This should pre-populate the key name, press and release scripts.
 
-![alt text](<docs/images/Screenshot 2025-01-10 204308.png>)
+![alt text](<docs/images/Screenshot 2025-01-11 151120.png>)
 
-![alt text](<docs/images/Screenshot 2025-01-10 204357.png>)
+![alt text](<docs/images/Screenshot 2025-01-11 151158.png>)
 
-![alt text](<docs/images/Screenshot 2025-01-10 204443.png>)
+![alt text](<docs/images/Screenshot 2025-01-11 151224.png>)
+
+### Layer control
+
+Add layer change keys, so that you can change between default (steno) and taipo.
+
+![alt text](<docs/images/Screenshot 2025-01-11 153136.png>)
+
+![alt text](<docs/images/Screenshot 2025-01-11 153251.png>)
 
 ### Save. Save. Save.
+
 Don't forget to download both your layout and script files when you're done, and save them somewhere (just in case!).  3-dots at top-right of screen.
 
 ![alt text](<docs/images/Screenshot 2025-01-10 204716.png>)
    
 ### Alt: Direct load layout
+
 Alternatively, for the starboard, you can direct load [this layout](<3_javelin_inputs/Starboard.javelin-layout>) with the 'load layout' button.
 
 ![alt text](<docs/images/Screenshot 2025-01-10 204817.png>)

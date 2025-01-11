@@ -275,11 +275,27 @@ func taipoKeysUpdate(side) {
   if (taipoKeysPressed == getTaipoBitmap("NO1")) sendText("%");
   if (taipoKeysPressed == getTaipoBitmap("NE1")) sendText("~");
   if (taipoKeysPressed == getTaipoBitmap("SA1")) sendText("`");
+  if (taipoKeysPressed == getTaipoBitmap("SNI1")) tapScanCode(0x48); // ins
+  if (taipoKeysPressed == getTaipoBitmap("R01")) tapScanCode(0x46); //print screen
+  if (taipoKeysPressed == getTaipoBitmap("S01")) tapScanCode(0xde); // brightness up
+  if (taipoKeysPressed == getTaipoBitmap("N01")) tapScanCode(0xdf); // brightness down
   if (taipoKeysPressed == getTaipoBitmap("I01")) tapScanCode(0xbd); // play pause
   if (taipoKeysPressed == getTaipoBitmap("A01")) tapScanCode(0xa5); // next track
   if (taipoKeysPressed == getTaipoBitmap("O01")) tapScanCode(0x80); // vol up
   if (taipoKeysPressed == getTaipoBitmap("T01")) tapScanCode(0x81); // vol down
   if (taipoKeysPressed == getTaipoBitmap("E01")) tapScanCode(0xa6); // prev track
+  if (taipoKeysPressed == getTaipoBitmap("OE01")) tapScanCode(0x3a); // f1
+  if (taipoKeysPressed == getTaipoBitmap("OT01")) tapScanCode(0x3b); // f2
+  if (taipoKeysPressed == getTaipoBitmap("AT01")) tapScanCode(0x3c); // f3
+  if (taipoKeysPressed == getTaipoBitmap("AO01")) tapScanCode(0x3d); // f4
+  if (taipoKeysPressed == getTaipoBitmap("NI01")) tapScanCode(0x3e); // f5
+  if (taipoKeysPressed == getTaipoBitmap("SI01")) tapScanCode(0x3f); // f6
+  if (taipoKeysPressed == getTaipoBitmap("SN01")) tapScanCode(0x40); // f7
+  if (taipoKeysPressed == getTaipoBitmap("RN01")) tapScanCode(0x41); // f8
+  if (taipoKeysPressed == getTaipoBitmap("RS01")) tapScanCode(0x42); // f9
+  if (taipoKeysPressed == getTaipoBitmap("TE01")) tapScanCode(0x43); // f10
+  if (taipoKeysPressed == getTaipoBitmap("AE01")) tapScanCode(0x44); // f11
+  if (taipoKeysPressed == getTaipoBitmap("RI01")) tapScanCode(0x45); // f12
   if (taipoKeysPressed == getTaipoBitmap("RT01")) {pressScanCode(0xe0);pressScanCode(0x1b);releaseScanCode(0x1b);releaseScanCode(0xe0);} // cut
   if (taipoKeysPressed == getTaipoBitmap("IO01")) {pressScanCode(0xe0);pressScanCode(0x06);releaseScanCode(0x06);releaseScanCode(0xe0);} // copy
   if (taipoKeysPressed == getTaipoBitmap("SE01")) {pressScanCode(0xe0);pressScanCode(0x19);releaseScanCode(0x19);releaseScanCode(0xe0);} // paste
@@ -437,3 +453,26 @@ func getTaipoBitmap(string) var{
   }
   return bitmap;
 }
+
+// Prefab for :LHS
+// #prefab Taipo:Key01_LHS_R [{"t":"p","d":{"a":{"t":"s","script":"// Taipo LHS\\nR\npressTaipoR(0);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoR(0);"}}}]
+// #prefab Taipo:Key02_LHS_S [{"t":"p","d":{"a":{"t":"s","script":"// Taipo LHS\\nS\npressTaipoS(0);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoS(0);"}}}]
+// #prefab Taipo:Key03_LHS_N [{"t":"p","d":{"a":{"t":"s","script":"// Taipo LHS\\nN\npressTaipoN(0);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoN(0);"}}}]
+// #prefab Taipo:Key04_LHS_I [{"t":"p","d":{"a":{"t":"s","script":"// Taipo LHS\\nI\npressTaipoI(0);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoI(0);"}}}]
+// #prefab Taipo:Key09_LHS_A [{"t":"p","d":{"a":{"t":"s","script":"// Taipo LHS\\nA\npressTaipoA(0);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoA(0);"}}}]
+// #prefab Taipo:Key10_LHS_O [{"t":"p","d":{"a":{"t":"s","script":"// Taipo LHS\\nO\npressTaipoO(0);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoO(0);"}}}]
+// #prefab Taipo:Key11_LHS_T [{"t":"p","d":{"a":{"t":"s","script":"// Taipo LHS\\nT\npressTaipoT(0);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoT(0);"}}}]
+// #prefab Taipo:Key12_LHS_E [{"t":"p","d":{"a":{"t":"s","script":"// Taipo LHS\\nE\npressTaipoE(0);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoE(0);"}}}]
+// #prefab Taipo:Key17_LHS_Inner [{"t":"p","d":{"a":{"t":"s","script":"// Taipo LHS\\nInner\npressTaipoInner(0);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoInner(0);"}}}]
+// #prefab Taipo:Key18_LHS_Outer [{"t":"p","d":{"a":{"t":"s","script":"// Taipo LHS\\nOuter\npressTaipoOuter(0);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoOuter(0);"}}}]
+// Prefab for :RHS
+// #prefab Taipo:Key08_RHS_R [{"t":"p","d":{"a":{"t":"s","script":"// Taipo RHS\\nR\npressTaipoR(1);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoR(1);"}}}]
+// #prefab Taipo:Key07_RHS_S [{"t":"p","d":{"a":{"t":"s","script":"// Taipo RHS\\nS\npressTaipoS(1);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoS(1);"}}}]
+// #prefab Taipo:Key06_RHS_N [{"t":"p","d":{"a":{"t":"s","script":"// Taipo RHS\\nN\npressTaipoN(1);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoN(1);"}}}]
+// #prefab Taipo:Key05_RHS_I [{"t":"p","d":{"a":{"t":"s","script":"// Taipo RHS\\nI\npressTaipoI(1);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoI(1);"}}}]
+// #prefab Taipo:Key16_RHS_A [{"t":"p","d":{"a":{"t":"s","script":"// Taipo RHS\\nA\npressTaipoA(1);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoA(1);"}}}]
+// #prefab Taipo:Key15_RHS_O [{"t":"p","d":{"a":{"t":"s","script":"// Taipo RHS\\nO\npressTaipoO(1);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoO(1);"}}}]
+// #prefab Taipo:Key14_RHS_T [{"t":"p","d":{"a":{"t":"s","script":"// Taipo RHS\\nT\npressTaipoT(1);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoT(1);"}}}]
+// #prefab Taipo:Key13_RHS_E [{"t":"p","d":{"a":{"t":"s","script":"// Taipo RHS\\nE\npressTaipoE(1);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoE(1);"}}}]
+// #prefab Taipo:Key20_RHS_Inner [{"t":"p","d":{"a":{"t":"s","script":"// Taipo RHS\\nInner\npressTaipoInner(1);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoInner(1);"}}}]
+// #prefab Taipo:Key19_RHS_Outer [{"t":"p","d":{"a":{"t":"s","script":"// Taipo RHS\\nOuter\npressTaipoOuter(1);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoOuter(1);"}}}]
