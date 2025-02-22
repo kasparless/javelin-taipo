@@ -52,8 +52,8 @@ def convertTextToKeypress(text):
   if text.lower() == "f11": keypress = f"tapScanCode(0x44); // f11" # 
   if text.lower() == "f12": keypress = f"tapScanCode(0x45); // f12" # 
   if text.lower() == "play/pause": keypress = r"tapScanCode(0xbd); // play pause" # SC_CONSUMER_PLAY_PAUSE
-  if text.lower() == "volume up": keypress = r"tapScanCode(0x80); // vol up" # SC_VOLUME_UP 
-  if text.lower() == "volume down": keypress = r"tapScanCode(0x81); // vol down" # SC_VOLUME_DOWN 
+  if text.lower() == "volume up": keypress = r"tapScanCode(0xd9); // vol up" # SC_CONSUMER_VOLUME_UP 
+  if text.lower() == "volume down": keypress = r"tapScanCode(0xda); // vol down" # SC_CONSUMER_VOLUME_DOWN 
   if text.lower() == "next track": keypress = r"tapScanCode(0xa5); // next track" # SC_CONSUMER_SCAN_NEXT_TRACK 
   if text.lower() == "previous track": keypress = r"tapScanCode(0xa6); // prev track" # SC_CONSUMER_SCAN_PREVIOUS_TRACK 
   if text.lower() == "print screen": keypress = f"tapScanCode(0x46); //print screen" # SC_SYS_RQ
