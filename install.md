@@ -1,6 +1,8 @@
 #  Installation instructions:
 
-## Quick version
+## Brief version
+
+If you are already familiar with Javelin-Script:
 
 1. Create a new layer
 2. Go to layer -> Custom scripts -> New
@@ -73,18 +75,17 @@ Select 'edit layout', then add layer.
 ###  Main script
 Select 'Custom Scripts' and click the plus to add a script.  Name it, and paste the code from the `javelin-taipo` link above into the 'User Script' area.
 
-![alt text](<docs/images/Screenshot 2025-01-10 203717.png>)
+![alt text](docs/images/Screenshot%202025-02-22%20173043.png)
 
-![alt text](<docs/images/Screenshot 2025-01-10 203927.png>)
+![alt text](docs/images/Screenshot%202025-02-22%20173455.png)
 
-### Key scripts
-Select each key in turn and select a 'Trigger' from the 'Taipo' layer.  This should pre-populate the key name, press and release scripts.
+### Key scripts / prefabs
+Select each key in turn and select a 'Prefab' from the 'Taipo' layer.  This should pre-populate the key name, press and release scripts.  The 'Prefab' is a code element that identifies the key, associates the key press script, and also attempts to highlight the next key for you, to reduce this setup time.
 
-![alt text](<docs/images/Screenshot 2025-01-11 151120.png>)
+![alt text](docs/images/Screenshot%202025-02-22%20173455.png)
 
-![alt text](<docs/images/Screenshot 2025-01-11 151158.png>)
-
-![alt text](<docs/images/Screenshot 2025-01-11 151224.png>)
+![alt text](docs/images/Screenshot%202025-02-22%20174012.png)
+![alt text](docs/images/Screenshot%202025-02-22%20174056.png)
 
 ### Layer control
 
@@ -111,7 +112,7 @@ Alternatively, for the starboard, you can direct load [this layout](<3_javelin_i
 ![alt text](<docs/images/Screenshot 2025-01-10 204926.png>)
 
 ### Click 'Create Firmware'.
-The firmware is created locally in your browser (yes, incredible, right?) and your browser will download the `.uf2` file to your desktop.  Follow the instructions to load the firmware onto your keyboard and test.
+The firmware is created locally in your browser (yes, incredible, right?) and your browser will download the `.uf2` file to your desktop.  Follow the instructions to load the firmware onto your keyboard and test.  Note that the firmware upload buttons may differ for different hardware (eg Starboard), please refer your hardware-specific instructions if required.
 
 ![alt text](<docs/images/Screenshot 2025-01-10 205058.png>)
 
