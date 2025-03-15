@@ -13,7 +13,7 @@ var taipoKeysCurrentlyPressedR = 0x0; // Keys that are currently being held down
 var taipoKeysPressedL = 0x0;
 var taipoKeysCurrentlyPressedL = 0x0; // Keys that are currently being held down, used to check if any keys are being held down
 
-func pressTaipoBitMask(side, bitmask) { 
+func pressTaipoBitMask(side, bitmask) {
   if (side == 0) {
     taipoKeysPressedL = taipoKeysPressedL | bitmask; // Set bit
     taipoKeysCurrentlyPressedL = taipoKeysCurrentlyPressedL | bitmask;
@@ -24,7 +24,7 @@ func pressTaipoBitMask(side, bitmask) {
   taipoLayerPress(side);
 }
 
-func releaseTaipoBitMask(side, bitmask) { 
+func releaseTaipoBitMask(side, bitmask) {
   if (side == 0) {
     taipoKeysCurrentlyPressedL = taipoKeysCurrentlyPressedL & ~bitmask; // Clear bit
   } else {
@@ -173,7 +173,7 @@ func taipoKeysUpdate(side) {
     taipoKeysCurrentlyPressed = taipoKeysCurrentlyPressedR;
   }
 
-  printValue("taipoKeysCurrentlyPressed", taipoKeysCurrentlyPressed);
+  // printValue("taipoKeysCurrentlyPressed", taipoKeysCurrentlyPressed);
 
   if (taipoKeysPressed == getTaipoBitmap("R")) sendText("r");
   if (taipoKeysPressed == getTaipoBitmap("S")) sendText("s");
@@ -300,7 +300,7 @@ func taipoKeysUpdate(side) {
   if (taipoKeysPressed == getTaipoBitmap("IO01")) {pressScanCode(0xe0);pressScanCode(0x06);releaseScanCode(0x06);releaseScanCode(0xe0);} // copy
   if (taipoKeysPressed == getTaipoBitmap("SE01")) {pressScanCode(0xe0);pressScanCode(0x19);releaseScanCode(0x19);releaseScanCode(0xe0);} // paste
   if (taipoKeysPressed == getTaipoBitmap("NA01")) {pressScanCode(0xe0);pressScanCode(0x1d);releaseScanCode(0x1d);releaseScanCode(0xe0);} // undo
-  
+
   if (side == 0) { // reset
     taipoKeysPressedL = 0;
   } else {
@@ -344,75 +344,75 @@ func taipoOneshotUpdate(side) {
 
   // Format (taipoCheckOneshot(side, getTaipoBitmap("Keys"), getTaipoBitmap("Excluded keys")))
   // This allows for multiple to be pressed at the same time
-  if (taipoCheckOneshot(side, getTaipoBitmap("RA"), getTaipoBitmap("01"))) { // GUI 
+  if (taipoCheckOneshot(side, getTaipoBitmap("RA"), getTaipoBitmap("01"))) { // GUI
     pressScanCode(0xe3); // SC_L_META
   } else if (!taipoCheckOneshot(!side, getTaipoBitmap("RA"), getTaipoBitmap("01"))){ // Release if other side not being held down
     releaseScanCode(0xe3); // SC_L_META
   }
 
-  if (taipoCheckOneshot(side, getTaipoBitmap("IE0"), getTaipoBitmap("1"))) { // LEFT 
+  if (taipoCheckOneshot(side, getTaipoBitmap("IE0"), getTaipoBitmap("1"))) { // LEFT
     pressScanCode(0x50); // SC_LEFT
   } else if (!taipoCheckOneshot(!side, getTaipoBitmap("IE0"), getTaipoBitmap("1"))){
     releaseScanCode(0x50); // SC_LEFT
   }
 
-  if (taipoCheckOneshot(side, getTaipoBitmap("RA1"), getTaipoBitmap("0"))) { // PAGEUP 
+  if (taipoCheckOneshot(side, getTaipoBitmap("RA1"), getTaipoBitmap("0"))) { // PAGEUP
     pressScanCode(0x4b); // SC_PAGE_UP
   } else if (!taipoCheckOneshot(!side, getTaipoBitmap("RA1"), getTaipoBitmap("0"))){
     releaseScanCode(0x4b); // SC_PAGE_UP
   }
 
 
-  if (taipoCheckOneshot(side, getTaipoBitmap("SO"), getTaipoBitmap("01"))) { // ALT 
+  if (taipoCheckOneshot(side, getTaipoBitmap("SO"), getTaipoBitmap("01"))) { // ALT
     pressScanCode(0xe2); // SC_L_ALT
   } else if (!taipoCheckOneshot(!side, getTaipoBitmap("SO"), getTaipoBitmap("01"))){
     releaseScanCode(0xe2); // SC_L_ALT
   }
 
-  if (taipoCheckOneshot(side, getTaipoBitmap("NT0"), getTaipoBitmap("1"))) { // DOWN 
+  if (taipoCheckOneshot(side, getTaipoBitmap("NT0"), getTaipoBitmap("1"))) { // DOWN
     pressScanCode(0x51); // SC_DOWN
   } else if (!taipoCheckOneshot(!side, getTaipoBitmap("NT0"), getTaipoBitmap("1"))){
     releaseScanCode(0x51); // SC_DOWN
   }
 
-  if (taipoCheckOneshot(side, getTaipoBitmap("SO1"), getTaipoBitmap("0"))) { // HOME 
+  if (taipoCheckOneshot(side, getTaipoBitmap("SO1"), getTaipoBitmap("0"))) { // HOME
     pressScanCode(0x4a); // SC_HOME
   } else if (!taipoCheckOneshot(!side, getTaipoBitmap("SO1"), getTaipoBitmap("0"))){
     releaseScanCode(0x4a); // SC_HOME
   }
 
 
-  if (taipoCheckOneshot(side, getTaipoBitmap("NT"), getTaipoBitmap("01"))) { // CTRL 
+  if (taipoCheckOneshot(side, getTaipoBitmap("NT"), getTaipoBitmap("01"))) { // CTRL
     pressScanCode(0xe0); // SC_L_CTRL
   } else if (!taipoCheckOneshot(!side, getTaipoBitmap("NT"), getTaipoBitmap("01"))){
     releaseScanCode(0xe0); // SC_L_CTRL
   }
 
-  if (taipoCheckOneshot(side, getTaipoBitmap("SO0"), getTaipoBitmap("1"))) { // UP 
+  if (taipoCheckOneshot(side, getTaipoBitmap("SO0"), getTaipoBitmap("1"))) { // UP
     pressScanCode(0x52); // SC_UP
   } else if (!taipoCheckOneshot(!side, getTaipoBitmap("SO0"), getTaipoBitmap("1"))){
     releaseScanCode(0x52); // SC_UP
   }
 
-  if (taipoCheckOneshot(side, getTaipoBitmap("NT1"), getTaipoBitmap("0"))) { // END 
+  if (taipoCheckOneshot(side, getTaipoBitmap("NT1"), getTaipoBitmap("0"))) { // END
     pressScanCode(0x4d); // SC_END
   } else if (!taipoCheckOneshot(!side, getTaipoBitmap("NT1"), getTaipoBitmap("0"))){
     releaseScanCode(0x4d); // SC_END
   }
 
-  if (taipoCheckOneshot(side, getTaipoBitmap("IE"), getTaipoBitmap("01"))) { // SHIFT 
+  if (taipoCheckOneshot(side, getTaipoBitmap("IE"), getTaipoBitmap("01"))) { // SHIFT
     pressScanCode(0xe1); // SC_L_SHIFT
   } else if (!taipoCheckOneshot(!side, getTaipoBitmap("IE"), getTaipoBitmap("01"))){
     releaseScanCode(0xe1); // SC_L_SHIFT
   }
 
-  if (taipoCheckOneshot(side, getTaipoBitmap("RA0"), getTaipoBitmap("1"))) { // RIGHT 
+  if (taipoCheckOneshot(side, getTaipoBitmap("RA0"), getTaipoBitmap("1"))) { // RIGHT
     pressScanCode(0x4f); // SC_RIGHT
   } else if (!taipoCheckOneshot(!side, getTaipoBitmap("RA0"), getTaipoBitmap("1"))){
     releaseScanCode(0x4f); // SC_RIGHT
   }
 
-  if (taipoCheckOneshot(side, getTaipoBitmap("IE1"), getTaipoBitmap("0"))) { // PAGEDOWN 
+  if (taipoCheckOneshot(side, getTaipoBitmap("IE1"), getTaipoBitmap("0"))) { // PAGEDOWN
     pressScanCode(0x4e); // SC_PAGE_DOWN
   } else if (!taipoCheckOneshot(!side, getTaipoBitmap("IE1"), getTaipoBitmap("0"))){
     releaseScanCode(0x4e); // SC_PAGE_DOWN
@@ -447,32 +447,32 @@ func getTaipoBitmap(string) var{
       bitmap = bitmap | (1 << 1);
     } else if (string[i] == "E"[0]) {
       bitmap = bitmap | (1 << 0);
-    } 
-    
+    }
+
     i = i+1;
   }
   return bitmap;
 }
 
 // Prefab for :LHS
-// #prefab Taipo:Key01_LHS_R [{"t":"p","d":{"a":{"t":"s","script":"// Taipo LHS\\nR\npressTaipoR(0);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoR(0);"}}}]
-// #prefab Taipo:Key02_LHS_S [{"t":"p","d":{"a":{"t":"s","script":"// Taipo LHS\\nS\npressTaipoS(0);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoS(0);"}}}]
-// #prefab Taipo:Key03_LHS_N [{"t":"p","d":{"a":{"t":"s","script":"// Taipo LHS\\nN\npressTaipoN(0);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoN(0);"}}}]
-// #prefab Taipo:Key04_LHS_I [{"t":"p","d":{"a":{"t":"s","script":"// Taipo LHS\\nI\npressTaipoI(0);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoI(0);"}}}]
-// #prefab Taipo:Key09_LHS_A [{"t":"p","d":{"a":{"t":"s","script":"// Taipo LHS\\nA\npressTaipoA(0);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoA(0);"}}}]
-// #prefab Taipo:Key10_LHS_O [{"t":"p","d":{"a":{"t":"s","script":"// Taipo LHS\\nO\npressTaipoO(0);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoO(0);"}}}]
-// #prefab Taipo:Key11_LHS_T [{"t":"p","d":{"a":{"t":"s","script":"// Taipo LHS\\nT\npressTaipoT(0);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoT(0);"}}}]
-// #prefab Taipo:Key12_LHS_E [{"t":"p","d":{"a":{"t":"s","script":"// Taipo LHS\\nE\npressTaipoE(0);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoE(0);"}}}]
-// #prefab Taipo:Key17_LHS_Inner [{"t":"p","d":{"a":{"t":"s","script":"// Taipo LHS\\nInner\npressTaipoInner(0);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoInner(0);"}}}]
-// #prefab Taipo:Key18_LHS_Outer [{"t":"p","d":{"a":{"t":"s","script":"// Taipo LHS\\nOuter\npressTaipoOuter(0);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoOuter(0);"}}}]
+// #prefab Taipo:Left Hand Side - 1,1 - R [{"t":"p","d":{"a":{"t":"s","script":"// Taipo LHS\\nR\npressTaipoR(0);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoR(0);"}}}]
+// #prefab Taipo:Left Hand Side - 1,2 - S [{"t":"p","d":{"a":{"t":"s","script":"// Taipo LHS\\nS\npressTaipoS(0);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoS(0);"}}}]
+// #prefab Taipo:Left Hand Side - 1,3 - N [{"t":"p","d":{"a":{"t":"s","script":"// Taipo LHS\\nN\npressTaipoN(0);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoN(0);"}}}]
+// #prefab Taipo:Left Hand Side - 1,4 - I [{"t":"p","d":{"a":{"t":"s","script":"// Taipo LHS\\nI\npressTaipoI(0);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoI(0);"}}}]
+// #prefab Taipo:Left Hand Side - 2,1 - A [{"t":"p","d":{"a":{"t":"s","script":"// Taipo LHS\\nA\npressTaipoA(0);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoA(0);"}}}]
+// #prefab Taipo:Left Hand Side - 2,2 - O [{"t":"p","d":{"a":{"t":"s","script":"// Taipo LHS\\nO\npressTaipoO(0);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoO(0);"}}}]
+// #prefab Taipo:Left Hand Side - 2,3 - T [{"t":"p","d":{"a":{"t":"s","script":"// Taipo LHS\\nT\npressTaipoT(0);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoT(0);"}}}]
+// #prefab Taipo:Left Hand Side - 2,4 - E [{"t":"p","d":{"a":{"t":"s","script":"// Taipo LHS\\nE\npressTaipoE(0);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoE(0);"}}}]
+// #prefab Taipo:Left Hand Side - 3,1 - Inner [{"t":"p","d":{"a":{"t":"s","script":"// Taipo LHS\\nInner\npressTaipoInner(0);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoInner(0);"}}}]
+// #prefab Taipo:Left Hand Side - 3,2 - Outer [{"t":"p","d":{"a":{"t":"s","script":"// Taipo LHS\\nOuter\npressTaipoOuter(0);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoOuter(0);"}}}]
 // Prefab for :RHS
-// #prefab Taipo:Key08_RHS_R [{"t":"p","d":{"a":{"t":"s","script":"// Taipo RHS\\nR\npressTaipoR(1);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoR(1);"}}}]
-// #prefab Taipo:Key07_RHS_S [{"t":"p","d":{"a":{"t":"s","script":"// Taipo RHS\\nS\npressTaipoS(1);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoS(1);"}}}]
-// #prefab Taipo:Key06_RHS_N [{"t":"p","d":{"a":{"t":"s","script":"// Taipo RHS\\nN\npressTaipoN(1);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoN(1);"}}}]
-// #prefab Taipo:Key05_RHS_I [{"t":"p","d":{"a":{"t":"s","script":"// Taipo RHS\\nI\npressTaipoI(1);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoI(1);"}}}]
-// #prefab Taipo:Key16_RHS_A [{"t":"p","d":{"a":{"t":"s","script":"// Taipo RHS\\nA\npressTaipoA(1);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoA(1);"}}}]
-// #prefab Taipo:Key15_RHS_O [{"t":"p","d":{"a":{"t":"s","script":"// Taipo RHS\\nO\npressTaipoO(1);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoO(1);"}}}]
-// #prefab Taipo:Key14_RHS_T [{"t":"p","d":{"a":{"t":"s","script":"// Taipo RHS\\nT\npressTaipoT(1);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoT(1);"}}}]
-// #prefab Taipo:Key13_RHS_E [{"t":"p","d":{"a":{"t":"s","script":"// Taipo RHS\\nE\npressTaipoE(1);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoE(1);"}}}]
-// #prefab Taipo:Key20_RHS_Inner [{"t":"p","d":{"a":{"t":"s","script":"// Taipo RHS\\nInner\npressTaipoInner(1);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoInner(1);"}}}]
-// #prefab Taipo:Key19_RHS_Outer [{"t":"p","d":{"a":{"t":"s","script":"// Taipo RHS\\nOuter\npressTaipoOuter(1);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoOuter(1);"}}}]
+// #prefab Taipo:Right Hand Side - 1,1 - I [{"t":"p","d":{"a":{"t":"s","script":"// Taipo RHS\\nI\npressTaipoI(1);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoI(1);"}}}]
+// #prefab Taipo:Right Hand Side - 1,2 - N [{"t":"p","d":{"a":{"t":"s","script":"// Taipo RHS\\nN\npressTaipoN(1);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoN(1);"}}}]
+// #prefab Taipo:Right Hand Side - 1,3 - S [{"t":"p","d":{"a":{"t":"s","script":"// Taipo RHS\\nS\npressTaipoS(1);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoS(1);"}}}]
+// #prefab Taipo:Right Hand Side - 1,4 - R [{"t":"p","d":{"a":{"t":"s","script":"// Taipo RHS\\nR\npressTaipoR(1);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoR(1);"}}}]
+// #prefab Taipo:Right Hand Side - 2,1 - E [{"t":"p","d":{"a":{"t":"s","script":"// Taipo RHS\\nE\npressTaipoE(1);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoE(1);"}}}]
+// #prefab Taipo:Right Hand Side - 2,2 - T [{"t":"p","d":{"a":{"t":"s","script":"// Taipo RHS\\nT\npressTaipoT(1);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoT(1);"}}}]
+// #prefab Taipo:Right Hand Side - 2,3 - O [{"t":"p","d":{"a":{"t":"s","script":"// Taipo RHS\\nO\npressTaipoO(1);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoO(1);"}}}]
+// #prefab Taipo:Right Hand Side - 2,4 - A [{"t":"p","d":{"a":{"t":"s","script":"// Taipo RHS\\nA\npressTaipoA(1);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoA(1);"}}}]
+// #prefab Taipo:Right Hand Side - 3,1 - Outer [{"t":"p","d":{"a":{"t":"s","script":"// Taipo RHS\\nOuter\npressTaipoOuter(1);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoOuter(1);"}}}]
+// #prefab Taipo:Right Hand Side - 3,2 - Inner [{"t":"p","d":{"a":{"t":"s","script":"// Taipo RHS\\nInner\npressTaipoInner(1);"}}},{"t":"r","d":{"a":{"t":"s","script":"//\nreleaseTaipoInner(1);"}}}]
